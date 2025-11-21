@@ -15,7 +15,7 @@ function ExperienceFirstPage({ sendData }) {
     TechStack = [],
     ImageLink,
   } = sendData;
-
+  console.log(TechStack);
   return (
     <div className="experienceFirstPage">
       <div className="primaryInformationSection mobilePrimaryInformationSection">
@@ -47,21 +47,37 @@ function ExperienceFirstPage({ sendData }) {
           <div className="durationDiv">{Duration}</div>
         </div>
       </div>
-      <div className="techStackSection">
-        <div className="bubbleSection" aria-label="Technology stack">
-          {TechStack.length > 0 ? (
-            TechStack.map((tech, idx) => (
+
+
+      <div className="secondaryInformationSection">
+        <div className="bubbleSection">
+          <div className="bubbleTrack1">
+            {[...TechStack, ...TechStack, ...TechStack].map((tech, idx) => (
               <span key={idx} className="bubbleChip">
                 {tech}
               </span>
-            ))
-          ) : (
-            <span className="bubbleChip" aria-disabled="true">
-              No tech listed
-            </span>
-          )}
+            ))}
+          </div>
+          <div className="bubbleTrack2">
+            {[...TechStack, ...TechStack, ...TechStack].map((tech, idx) => (
+              <span key={idx} className="bubbleChip">
+                {tech}
+              </span>
+            ))}
+          </div>
+          <div className="bubbleTrack3">
+            {[...TechStack, ...TechStack, ...TechStack].map((tech, idx) => (
+              <span key={idx} className="bubbleChip">
+                {tech}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
+
+
+
+      
     </div>
   );
 }
