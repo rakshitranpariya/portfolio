@@ -2,8 +2,7 @@ import { React, useState } from "react";
 import styles from "./ExperienceComponent.module.css";
 import ExperienceFirstPage from "./ExperienceFirstPage";
 import ExperienceSecondPage from "./ExperienceSecondPage";
-function ExperienceComponent({ sendData }) {
-  const [activeDotIndex, setActiveDotIndex] = useState(0);
+function ExperienceComponent({ sendData, activeDotIndex, setActiveDotIndex }) {
   function toggleDot() {
     console.log("toggle was clicked");
     if (activeDotIndex === 0) {

@@ -48,7 +48,7 @@ function Education() {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "https://fxgsvzimq6.execute-api.us-east-1.amazonaws.com/default/FetchEducationDetails"
+        "https://62e2fnrj4g.execute-api.us-east-2.amazonaws.com/prod/education-function"
       );
       setEducationData(response.data);
     } catch (error) {

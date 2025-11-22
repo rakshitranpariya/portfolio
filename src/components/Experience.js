@@ -9,6 +9,8 @@ import rightArrow from "../Images/right-button.png";
 function Experience() {
   const [experienceData, setExperienceData] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0); // Track the current card index
+  const [activeDotIndex, setActiveDotIndex] = useState(0); // Track the current card index
+
   const [startX, setStartX] = useState(0); // Track the starting position of the touch
 
   const handleTouchStart = (e) => {
@@ -37,25 +39,44 @@ function Experience() {
   };
 
   const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex > 0 ? prevIndex - 1 : experienceData.length - 1
-    );
+    setCurrentIndex((prevIndex) => {
+      // Calculate new index
+      const newIndex =
+        prevIndex > 0 ? prevIndex - 1 : experienceData.length - 1;
+
+      setTimeout(() => {
+        setActiveDotIndex((prev) => ({ ...prev, [prevIndex]: 0 }));
+      }, 800);
+
+      return newIndex;
+    });
   };
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex < experienceData.length - 1 ? prevIndex + 1 : 0
-    );
+    setCurrentIndex((prevIndex) => {
+      // Calculate new index
+      const newIndex =
+        prevIndex < experienceData.length - 1 ? prevIndex + 1 : 0;
+
+      // Reset activeDotIndex of the previous index (prevIndex)
+      setTimeout(() => {
+        setActiveDotIndex((prev) => ({ ...prev, [prevIndex]: 0 }));
+      }, 800);
+
+      return newIndex;
+    });
   };
 
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "https://stwszo9kd9.execute-api.us-east-2.amazonaws.com/prod/experience-function"
+        "https://62e2fnrj4g.execute-api.us-east-2.amazonaws.com/prod/experience-function"
       );
       console.log("API status:", response.status);
       const normalize = (d) => (Array.isArray(d) ? d : d ? [d] : []);
-      setExperienceData(normalize(response.data));
+      const data = normalize(response.data);
+      data.sort((a, b) => (a.id > b.id ? 1 : a.id < b.id ? -1 : 0));
+      setExperienceData(data);
     } catch (error) {
       console.error("Error fecthing data:", error.message);
     }
@@ -83,7 +104,13 @@ function Experience() {
                 <div className={styles.individualCard} key={index}>
                   <ExperienceComponent
                     sendData={data}
-               
+                    activeDotIndex={activeDotIndex[index] || 0}
+                    setActiveDotIndex={(newIndex) =>
+                      setActiveDotIndex((prev) => ({
+                        ...prev,
+                        [index]: newIndex,
+                      }))
+                    }
                   />
                 </div>
               ))

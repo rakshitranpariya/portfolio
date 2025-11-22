@@ -1,4 +1,4 @@
-.particularPage{
+.particularPage {
   width: 100%;
   height: 100vh;
   display: flex;
@@ -8,25 +8,26 @@
   background-color: rgb(255, 255, 255);
 }
 
-.buttonContainer{
+.buttonContainer {
   display: flex;
   justify-content: start;
-  margin-top:2%;
+  margin-top: 2%;
   padding-left: 1%;
 }
 
 .carouselContainer {
-  width: 100%; 
+  width: 100%;
   overflow: hidden;
   position: relative;
   display: flex;
   justify-content: center;
   border-radius: 40px;
-  height:70%;
-  background-color: rgb(255, 255, 255);}
+  height: 70%;
+  background-color: rgb(255, 255, 255);
+}
 
-.carouselGrid{
-  padding:1%;
+.carouselGrid {
+  padding: 1%;
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -34,75 +35,67 @@
   border-radius: 25px;
 }
 
-.individualCard{
-    margin-right:  3%;
-    position: relative;
-    flex :  0 0 100%;
-    height: 100%;
-    border-radius: 25px;
+.individualCard {
+  margin-right: 2.5%;
+  position: relative;
+  flex: 0 0 100%;
+  height: 100%;
+  border-radius: 25px;
 
-    overflow: auto;
-  }
-  
-.navImage{
-    width: 30px;
-    height: 30px;
-    margin: 0px 5px;
-    border: none;
-    outline:none;
-    background-color: rgba(255, 99, 71, 0);
-}  
-
-
-
-  button{
-      background: transparent;
-      border: none;
-      /* background-color: aqua; */
-    }
-  
-    button.disabled {
-      cursor: not-allowed; 
-      opacity: 0.5; 
-    }
-  
-    .carousel {
-      display: flex;
-      transition: transform 0.5s ease;
-    }
-  
-  
-    .navImage{
-      width: 30px;
-      height: 30px;
-      margin: 0px 5px;
-      border: none;
-      outline:none;
-    }
-
-  
-  .educationGifSection{
-    width: 97%;
-    height: 200px;  
-    display: flex;
-    position : relative;
-    justify-content: center;
-    align-items: center;
-    bottom: 0;
-    background: url('../Gif/eduaction-gif.gif') no-repeat center/contain;
-  }
-
-
-
-
-  .general{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(255, 255, 255);
-    box-sizing: border-box;
-    border: 2px solid rgb(255, 73, 73);
-    width: 100%;
-    height: 100vh;
+  overflow: auto;
 }
 
+.navImage {
+  width: 30px;
+  height: 30px;
+  margin: 0px 5px;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 99, 71, 0);
+}
+
+button {
+  background: transparent;
+  border: none;
+  /* background-color: aqua; */
+}
+
+button.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.navImage {
+  width: 30px;
+  height: 30px;
+  margin: 0px 5px;
+  border: none;
+  outline: none;
+}
+
+.educationGifSection {
+  width: 97%;
+  height: 200px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  background: url("../Gif/eduaction-gif.gif") no-repeat center/contain;
+}
+
+.general {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  box-sizing: border-box;
+  border: 2px solid rgb(255, 73, 73);
+  width: 100%;
+  height: 100vh;
+}
