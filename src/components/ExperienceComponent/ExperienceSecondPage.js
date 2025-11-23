@@ -1,26 +1,22 @@
 import React from "react";
-import "./ExperienceSecondPage.css";
+import styles from "./ExperienceSecondPage.module.css";
 
 function ExperienceSecondPage({ sendData }) {
   if (!sendData) return null;
 
-  const {
-    CompanyName,
-    Role,
-    Responsibilities = [],
-  } = sendData;
+  const { CompanyName, Role, Responsibilities = [] } = sendData;
 
   return (
-    <div className="container-fluid experience-second-page">
+    <div className={styles.experience - second - page}>
       {/* Optional header context */}
-      <h3>{CompanyName} — {Role}</h3>
+      <h3>
+        {CompanyName} — {Role}
+      </h3>
 
-   
-      <div className="responsibility">Responsibilities:</div>
+      <div className={styles.responsibility}>Responsibilities:</div>
       <ul>
-        {Array.isArray(Responsibilities) && Responsibilities.map((item, idx) => (
-          <li key={idx}>{item}</li>
-        ))}
+        {Array.isArray(Responsibilities) &&
+          Responsibilities.map((item, idx) => <li key={idx}>{item}</li>)}
       </ul>
     </div>
   );

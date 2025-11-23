@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./ExperienceFirstPage.css";
+import styles from "./ExperienceFirstPage.module.css";
 import locationImage from "../../Images/location.png";
+
 function getRowsCount(containerHeight, chipHeight, minRows = 1) {
   return Math.max(minRows, Math.floor(containerHeight / chipHeight));
 }
@@ -14,9 +15,6 @@ function ExperienceFirstPage({ sendData }) {
       if (containerRef.current && chipRef.current) {
         const containerHeight = containerRef.current.offsetHeight;
         const chipHeight = 45;
-        console.log("chipHeight", chipHeight);
-        console.log("containerHeight", containerHeight);
-
         setRowCount(getRowsCount(containerHeight, chipHeight));
       }
     }
@@ -25,17 +23,17 @@ function ExperienceFirstPage({ sendData }) {
     return () => window.removeEventListener("resize", updateRows);
   }, []);
 
-  // Prepare as many tracks as needed
   const tracks = Array(rowCount).fill(0);
+
   function shuffleArray(array) {
-    const arr = array.slice(); // copy array
+    const arr = array.slice();
     for (let i = arr.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [arr[i], arr[j]] = [arr[j], arr[i]];
     }
     return arr;
   }
-  // Guard against undefined
+
   if (!sendData) return null;
 
   const {
@@ -51,18 +49,8 @@ function ExperienceFirstPage({ sendData }) {
     ImageLink,
   } = sendData;
   const monthNames = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul",
+    "Aug", "Sep", "Oct", "Nov", "Dec"
   ];
 
   const formatDate = (month, year) => {
@@ -78,7 +66,7 @@ function ExperienceFirstPage({ sendData }) {
     let endMonth, endYear;
     if (toMonth === "~" || toYear === "~") {
       const now = new Date();
-      endMonth = now.getMonth() + 1; // Months are 0-indexed in JS Date
+      endMonth = now.getMonth() + 1;
       endYear = now.getFullYear();
     } else {
       endMonth = Number(toMonth);
@@ -86,13 +74,9 @@ function ExperienceFirstPage({ sendData }) {
     }
     const startMonth = Number(fromMonth);
     const startYear = Number(fromYear);
-    // Calculate total months
     const totalMonths = (endYear - startYear) * 12 + (endMonth - startMonth);
-
-    // Separate into years and months
     const years = Math.floor(totalMonths / 12);
     const months = totalMonths % 12;
-    // Build result string
     let result = "";
     if (years > 0) {
       result += `${years} year${years > 1 ? "s" : ""}`;
@@ -103,59 +87,57 @@ function ExperienceFirstPage({ sendData }) {
     }
     return result || "Less than 1 month";
   };
+
   return (
-    <div className="experienceFirstPage">
-      <div className="primaryInformationSection ">
-        <div className="imageContainer">
+    <div className={styles.experienceFirstPage}>
+      <div className={styles.primaryInformationSection}>
+        <div className={styles.imageContainer}>
           {ImageLink ? (
             <img
               src={ImageLink}
               alt={`${CompanyName} logo`}
-              className="institutionImage "
+              className={styles.institutionImage}
             />
           ) : null}
         </div>
-        <div className="descriptionContainer">
-          <div className="jobTitleDiv">
-            <div className="roleTitle ">{Role}</div>
-            <div className="companyTitle ">{CompanyName}</div>
+        <div className={styles.descriptionContainer}>
+          <div className={styles.jobTitleDiv}>
+            <div className={styles.roleTitle}>{Role}</div>
+            <div className={styles.companyTitle}>{CompanyName}</div>
           </div>
-
-          <div className="triSection">
-            <div className="locationDiv">
-              <img className="locationIcon" src={locationImage} />
-              <div className="location">{Location}</div>
+          <div className={styles.triSection}>
+            <div className={styles.locationDiv}>
+              <img className={styles.locationIcon} src={locationImage} />
+              <div className={styles.location}>{Location}</div>
             </div>
-            <div className="employmentTypeDiv">
-              <span className="employmentTypeDot" aria-hidden="true" />
-              <span className="employmentTypeText">{EmploymentType}</span>
+            <div className={styles.employmentTypeDiv}>
+              <span className={styles.employmentTypeDot} aria-hidden="true" />
+              <span className={styles.employmentTypeText}>{EmploymentType}</span>
             </div>
           </div>
-          <div className="durationMainDiv">
-            <div className="startEndDiv">{`${fromDisplay} – ${toDisplay}`}</div>
-            <div className="durationDiv">
+          <div className={styles.durationMainDiv}>
+            <div className={styles.startEndDiv}>{`${fromDisplay} – ${toDisplay}`}</div>
+            <div className={styles.durationDiv}>
               {`{${getDurationString(FromMonth, FromYear, ToMonth, ToYear)}}`}
             </div>
           </div>
         </div>
       </div>
-
-      <div className="secondaryInformationSection" ref={containerRef}>
-        <div className="bubbleSection">
+      <div className={styles.secondaryInformationSection} ref={containerRef}>
+        <div className={styles.bubbleSection}>
           {tracks.map((_, trackIdx) => (
-            <div className="bubbleTrack" key={trackIdx}>
+            <div className={styles.bubbleTrack} key={trackIdx}>
               {[
                 ...shuffleArray(TechStack),
                 ...shuffleArray(TechStack),
                 ...shuffleArray(TechStack),
               ].map((tech, idx) =>
                 trackIdx === 0 && idx === 0 ? (
-                  // Use ref to measure the first chip
-                  <span ref={chipRef} key={idx} className="bubbleChip">
+                  <span ref={chipRef} key={idx} className={styles.bubbleChip}>
                     {tech}
                   </span>
                 ) : (
-                  <span key={idx} className="bubbleChip">
+                  <span key={idx} className={styles.bubbleChip}>
                     {tech}
                   </span>
                 )

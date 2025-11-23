@@ -1,9 +1,13 @@
 
 .educationFirstPage{
-    display : flex;
-    height: 100%;
-    width: 100%;
-    flex-direction: column;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  padding: 0px;
+  background-color: rgba(241, 241, 241, 0.411);
 }
 
 .primaryInformationSection{

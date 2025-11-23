@@ -1,85 +1,56 @@
 .experienceFirstPage {
   display: flex;
-  justify-content: space-around;
-  flex-direction: column;
   height: 100%;
   width: 100%;
   flex-direction: column;
-  padding: 0px;
-  background-color: rgba(241, 241, 241, 0.87);
+}
+
+.durationMainDiv {
+  padding-top: 5%;
 }
 
 .primaryInformationSection {
-  height: 60%;
+  width: 100%;
+  height: 70%;
+  margin: 0px 0px 0px 0px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgba(112, 167, 255, 0.104);
+  flex-direction: row;
+  padding-left: 3%;
+  padding-top: 4%;
 }
 
 .imageContainer {
-  padding: 3% 2%;
+  background-color: rgba(127, 255, 212, 0);
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100%;
+  width: 40%;
 }
-
 .institutionImage {
-  width: auto;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  padding: 10% ;
-  display: flex;
-}
-.institutionTitle {
-  width: 70%;
-  display: flex;
-  align-items: center;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: rgba(0, 0, 0, 0.749);
-}
-.triSection {
-  background-color: rgba(223, 48, 48, 0);
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: auto;
-}
-.triSectionLeft {
-  background-color: rgba(150, 21, 21, 0);
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+  width: 80%;
+  height: 70%;
 }
 
-.triSectionRight {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: center;
-  width: 100%;
-  font-size: 2rem;
-  font-weight: 500;
-  color: rgba(0, 0, 0, 0.424);
-}
 .descriptionContainer {
-  margin-top: 2%;
   display: flex;
-  justify-content: space-around;
   flex-direction: column;
   align-items: self-start;
-  height: 80%;
-  background-color: rgba(46, 139, 86, 0);
+  justify-content: space-around;
+  padding-left: 10px;
+  height: max-content;
+  width: 100%;
+  height: 45%;
 }
-.degreeTitle {
-  width: 90%;
-  justify-content: start;
-  align-items: center;
+.triSection {
   display: flex;
-  margin-bottom: 10px;
-  font-size: 3rem;
+  width: 100%;
+  justify-content: space-between;
+}
+.roleTitle {
+  display: flex;
+  font-size: 2.3rem;
   font-weight: 800;
   line-height: 1;
   color: rgb(0, 0, 0);
@@ -89,32 +60,87 @@
   height: 40px;
   margin-right: 1px;
 }
+.companyTitle {
+  padding-left: 1%;
+  font-size: 1.3rem;
+  font-weight: 550;
+  color: rgba(0, 0, 0, 0.749);
+}
 .locationDiv {
   display: flex;
   align-items: center;
   justify-content: start;
+  width: 100%;
 }
-.locationImage {
+
+.locationIcon {
   width: 25px;
   height: 25px;
 }
 .location {
-  font-size: 1.5rem;
-  font-weight: 300;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
   color: rgba(0, 0, 0, 0.583);
-  white-space: nowrap;
+  width: 100%;
 }
+
+.employmentTypeDiv {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  padding-left: 5%;
+}
+
+.employmentTypeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor; /* inherits text color for easy theming */
+  display: inline-block;
+  flex: 0 0 6px;
+}
+.employmentTypeText {
+  padding-left: 3%;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.secondaryInformationSection {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  padding-bottom: 1%;
+}
+
 .bubbleSection {
+  margin-left: 1%;
+  justify-content: flex-end;
   display: flex;
   flex-wrap: wrap;
+  gap: 8px;
+  background-color: rgba(25, 15, 226, 0);
   justify-content: center;
   align-items: center;
-  gap: 14px 14px;
-  padding: 0px 20px 10px 20px;
+}
+.bubbleTrack {
+  display: inline-flex;
+  animation: moveRight 65s linear infinite;
+  width: max-content;
+  gap: 10px;
+}
+
+@keyframes moveRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 .bubbleChip {
-  margin: 5px 5px;
+  margin: 4px 0px;
   color: #000000;
   white-space: nowrap;
   padding: 5px 20px;
@@ -125,174 +151,136 @@
   border-radius: 25px;
   font-size: 1rem;
   font-weight: 400;
+  height: 30px;
   display: inline-block;
   letter-spacing: 0.2px;
   transition:
     background-color 0.2s,
     box-shadow 0.2s;
   cursor: pointer;
-  box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.133);
-  user-select: none;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.133);
 }
-
 .bubbleChip:hover {
   background-color: rgba(112, 167, 255, 0.104);
-  color: rgba(0, 0, 0, 0.523);
-  box-shadow: 1px 1px 30px rgba(63, 63, 63, 0.212) inset;
+  color: rgb(0, 0, 0);
+  box-shadow: -2px -2px 10px rgba(63, 63, 63, 0.212) inset;
+}
+
+.triSection {
+  display: flex;
+  width: 100%;
+  margin-top: 1%;
+  width: 40%;
+}
+.gpsSection {
+  display: flex;
+  justify-content: start;
 }
 
 .durationDiv {
+  display: flex;
   background-color: rgba(255, 255, 255, 0);
-  font-size: 1.4rem;
-  font-weight: 200;
+  font-size: 1rem;
+  font-weight: 300;
+  padding-left: 1%;
   white-space: nowrap;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 767.98px) {
   .primaryInformationSection {
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    height: 50%;
     justify-content: center;
-  }
-  .instituteImage {
-    padding-top: 7%;
-    width: auto;
-  }
-
-  .degreeTitle {
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    font-size: 2.5rem;
-    font-weight: 800;
-    line-height: 1;
-    color: rgb(0, 0, 0);
-    text-align: center;
-  }
-
-  .institutionTitle {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .descriptionContainer {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    height: 80%;
-  }
-  .instituteName {
-    font-size: 1.2rem;
-    font-weight: 550;
-    justify-content: center;
-    display: flex;
-  }
-  .locationDiv {
-    /* border: #000000 solid 1px; */
-
-    display: flex;
-    align-items: center;
-    justify-content: start;
     padding: 0px;
   }
-  
-  .location {
-    font-size: 1.2rem;
-    font-weight: 300;
-    color: rgba(0, 0, 0, 0.583);
-    white-space: nowrap;
-  }
-  .locationImage {
-    width: 20px;
-    height: 20px;
-    /* margin-left: 5px; */
-  }
-  .durationDiv {
-    /* border: #331fea solid 1px; */
-    display: flex;
-    font-size: 1.1rem;
-    font-weight: 100;
-    white-space: nowrap;
-    margin: 0%;
-  }
-  .triSection {
-    /* background-color: rgba(191, 223, 48, 0.729); */
-    display: flex;
-    width: 100%;
-    height: auto;
-    flex-direction: row;
-  }
 
-  .triSectionLeft {
-    /* background-color: rgba(150, 21, 21, 0.691); */
-    /* border: #ea1f1f solid 1px; */
-    display: flex;
-    flex-direction: column;
+  .imageContainer {
+    height: 40%;
     width: 100%;
-  }
-
-  .triSectionRight {
     display: flex;
-    align-items: center;
     justify-content: center;
-    width: 100%;
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin: 0px;
+    align-items: center;
   }
-  .bubbleSection {
-    background-color: rgba(255, 255, 255, 0.778);
-    display: none !important;
-  }
-}
-
-@media (max-width: 769px) {
   .descriptionContainer {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-  }
-  .primaryInformationSection {
-    flex-direction: column !important;
     align-items: center;
-    gap: 1rem;
+    padding-left: 0%;
+    margin-top: 3%;
   }
   .institutionImage {
-    padding: 2%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    border-radius: 60px;
+    width: auto;
     height: 100%;
   }
-  .instituteName {
-    font-size: 1.2rem;
-    font-weight: 550;
+  .companyTitle {
     justify-content: center;
+    align-items: center;
     display: flex;
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: 500;
   }
-  .locationDiv{
+  .mobiletriSectionRight {
+    flex-direction: row;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 1.5rem;
+    font-weight: 400;
+    white-space: nowrap;
+    width: 30%;
+    margin: 0px;
   }
-  .durationDiv{
+
+  .secondaryInformationSection {
+    display: none;
+  }
+  .roleTitle {
+    font-size: 1.9rem;
     display: flex;
     justify-content: center;
-    align-items: center;
+    text-align: center;
   }
-  triSectionRight {
+  .locationDiv {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    font-size: 1.5rem;
+  }
+  .location {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #2d2d2d;
+  }
+  .triSection {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .employmentTypeDiv {
+    padding: 0px;
+    justify-content: center;
+  }
+  .employmentTypeText {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #2d2d2d;
+  }
+  .durationMainDiv {
+    margin-top: 5%;
+  }
+  .startEndDiv {
     font-weight: 600;
-    margin: 0px;
+    font-size: 1rem;
+  }
+  .durationDiv {
+    font-weight: 400;
+    font-size: 1rem;
+    justify-content: center;
   }
 }

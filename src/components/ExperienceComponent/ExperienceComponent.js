@@ -34,7 +34,8 @@ function ExperienceComponent({ sendData, activeDotIndex, setActiveDotIndex }) {
           >
             <span className={styles.scalingText}>Descrip</span>
           </button>
-        )}      </div>
+        )}{" "}
+      </div>
       <div
         className={`${styles.pageGrid}`}
         style={{
