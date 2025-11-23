@@ -7,7 +7,7 @@ function ExperienceSecondPage({ sendData }) {
   const { CompanyName, Role, Responsibilities = [] } = sendData;
 
   return (
-    <div className={styles.experience - second - page}>
+    <div className={styles.experiencesecondpage}>
       {/* Optional header context */}
       <h3>
         {CompanyName} — {Role}

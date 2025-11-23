@@ -1,11 +1,51 @@
-import React from "react";
-
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./EducationFirstPage.module.css";
-
 import graduationHat from "../../Images/graduationHat.png";
 import locationImage from "../../Images/location.png";
 import gpaImage from "../../Images/gpaLogo.png";
+function getRowsCount(containerHeight, chipHeight, minRows = 1) {
+  return Math.max(minRows, Math.floor(containerHeight / chipHeight));
+}
 function EducationFirstPage({ sendData }) {
+  const containerRef = useRef();
+  const chipRef = useRef();
+  const [rowCount, setRowCount] = useState(1);
+  useEffect(() => {
+    function updateRows() {
+      if (containerRef.current && chipRef.current) {
+        const containerHeight = containerRef.current.offsetHeight;
+        const chipHeight = 45;
+        setRowCount(getRowsCount(containerHeight, chipHeight));
+      }
+    }
+    updateRows();
+    window.addEventListener("resize", updateRows);
+    return () => window.removeEventListener("resize", updateRows);
+  }, []);
+
+  const tracks = Array(rowCount).fill(0);
+  function shuffleArray(array) {
+    const arr = array.slice();
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+  const {
+    InstitutionName,
+    Degree,
+    Major,
+    Location,
+    FromMonth,
+    FromYear,
+    ToMonth,
+    ToYear,
+    Gpa,
+    TotalGpa,
+    Courses,
+    ImageLink,
+  } = sendData;
   const monthNames = [
     "Jan",
     "Feb",
@@ -20,24 +60,39 @@ function EducationFirstPage({ sendData }) {
     "Nov",
     "Dec",
   ];
-  const {
-      InstitutionName,
-      Degree,
-      Major,
-      Location,
-      FromMonth,
-      FromYear,
-      ToMonth,
-      ToYear,
-      Gpa,
-      TotalGpa,
-      Courses,
-      ImageLink,
-    } = sendData;
-    
-    const fromMonthName = monthNames[FromMonth - 1];
-    const toMonthName = monthNames[ToMonth - 1];
-  console.log(Courses);
+  const formatDate = (month, year) => {
+    if (month === "~" || year === "~") {
+      return "Present";
+    }
+    return `${monthNames[Number(month) - 1]} ${year}`;
+  };
+  const fromDisplay = formatDate(FromMonth, FromYear);
+  const toDisplay = formatDate(ToMonth, ToYear);
+  const getDurationString = (fromMonth, fromYear, toMonth, toYear) => {
+    let endMonth, endYear;
+    if (toMonth === "~" || toYear === "~") {
+      const now = new Date();
+      endMonth = now.getMonth() + 1;
+      endYear = now.getFullYear();
+    } else {
+      endMonth = Number(toMonth);
+      endYear = Number(toYear);
+    }
+    const startMonth = Number(fromMonth);
+    const startYear = Number(fromYear);
+    const totalMonths = (endYear - startYear) * 12 + (endMonth - startMonth);
+    const years = Math.floor(totalMonths / 12);
+    const months = totalMonths % 12;
+    let result = "";
+    if (years > 0) {
+      result += `${years} year${years > 1 ? "s" : ""}`;
+    }
+    if (months > 0) {
+      result += result ? `, ` : "";
+      result += `${months} month${months > 1 ? "s" : ""}`;
+    }
+    return result || "Less than 1 month";
+  };
   return (
     <div className={`container ${styles.educationFirstPage} `}>
       <div
@@ -50,18 +105,11 @@ function EducationFirstPage({ sendData }) {
             className={`${styles.institutionImage} ${styles.mobileInstituteImage}`}
           />
         </div>
-        <div className={`col-md-8 col-12 ${styles.descriptionContainer}`}>
-          <div className={`text-center text-md-start `}>
-            <div
-              className={` ${styles.degreeTitle} ${styles.mobileDegreeTitle}`}
-            >
-             {Degree} {Major}
+        <div className={`${styles.descriptionContainer}`}>
+          <div className={styles.educationTitleDiv}>
+            <div className={` ${styles.degreeTitle}`}>
+              {Degree} {Major}
             </div>
-          </div>
-
-          <div
-            className={`${styles.institutionTitle} ${styles.mobileInstitutionTitle}`}
-          >
             <div className={styles.instituteName}>{InstitutionName}</div>
           </div>
 
@@ -81,7 +129,7 @@ function EducationFirstPage({ sendData }) {
               </div>
 
               <div className={`${styles.durationDiv}`}>
-                {`${fromMonthName}, ${FromYear} – ${toMonthName}, ${ToYear}`}
+                {`${fromDisplay} – ${toDisplay}`}
               </div>
             </div>
 
@@ -97,12 +145,26 @@ function EducationFirstPage({ sendData }) {
         </div>
       </div>
 
-      <div className={`row  d-flex ${styles.bubbleSection}`}>
-        <div className={`d-none d-md-block col-sm-12`}>
-          {Courses.map((course, idx) => (
-            <span key={idx} className={styles.bubbleChip}>
-              {course}
-            </span>
+      <div className={styles.secondaryInformationSection} ref={containerRef}>
+        <div className={styles.bubbleSection}>
+          {tracks.map((_, trackIdx) => (
+            <div className={styles.bubbleTrack} key={trackIdx}>
+              {[
+                ...shuffleArray(Courses),
+                ...shuffleArray(Courses),
+                ...shuffleArray(Courses),
+              ].map((tech, idx) =>
+                trackIdx === 0 && idx === 0 ? (
+                  <span ref={chipRef} key={idx} className={styles.bubbleChip}>
+                    {tech}
+                  </span>
+                ) : (
+                  <span key={idx} className={styles.bubbleChip}>
+                    {tech}
+                  </span>
+                )
+              )}
+            </div>
           ))}
         </div>
       </div>

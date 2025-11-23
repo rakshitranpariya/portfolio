@@ -24,7 +24,6 @@ function ExperienceFirstPage({ sendData }) {
   }, []);
 
   const tracks = Array(rowCount).fill(0);
-
   function shuffleArray(array) {
     const arr = array.slice();
     for (let i = arr.length - 1; i > 0; i--) {
@@ -34,7 +33,6 @@ function ExperienceFirstPage({ sendData }) {
     return arr;
   }
 
-  if (!sendData) return null;
 
   const {
     CompanyName,

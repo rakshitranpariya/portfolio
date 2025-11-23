@@ -21,10 +21,7 @@ function EducationComponent({ sendData }) {
 
   return (
     <div className={`container ${styles.educationComponent}`}>
-      {/* <div className={`${styles.dotSection}`}>
-        <div className={activeDotIndex===0?styles.activeDot:styles.dot} onClick={toggleDot}></div>
-        <div className={activeDotIndex===1?styles.activeDot:styles.dot} onClick={toggleDot}></div>
-      </div> */}
+      
       <div className={`${styles.descriptionButtonSection}`}>
         {activeDotIndex === 1 ? (
           <button
