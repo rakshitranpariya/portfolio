@@ -28,34 +28,33 @@ function Experience() {
   };
 
   const {
-    InstitutionName,
-    Degree,
-    Major,
-    Location,
-    FromMonth,
-    FromYear,
-    ToMonth,
-    ToYear,
-    Gpa,
-    TotalGpa,
-    Courses,
-    ImageLink,
-    Description,
-  } = experienceData;
-
+  CompanyName,
+  Role,
+  EmploymentType,
+  Location,
+  FromMonth,
+  FromYear,
+  ToMonth,
+  ToYear,
+  Responsibilities,
+  TechStack,
+  ImageLink,
+  id,
+} = experienceData;
+  console.log(experienceData);
   const formattedDate = `${FromMonth} ${FromYear} - ${ToMonth} ${ToYear}`;
 
   return (
     <div className="antialiased bg-gray-100 text-gray-800 py-5">
       <div className="relative container mx-auto px-6 flex flex-col space-y-8">
         <div className="absolute z-0 w-1 h-full bg-white shadow-md inset-0 left-13 xs:left-9 xs:top-6 md:mx-auto md:right-0 md:left-0"></div>
-          {experienceData.map((item, index) => (
-            <ExperienceComponent
-              key={item.id ?? index}
-              sendData={item} // pass full object
-              left={index % 2 === 1} // optional: alternate sides
-            />
-          ))}
+        {experienceData.map((item, index) => (
+          <ExperienceComponent
+            key={item.id ?? index}
+            sendData={item} // pass full object
+            left={index % 2 === 1} // optional: alternate sides
+          />
+        ))}
       </div>
     </div>
   );
