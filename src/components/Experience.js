@@ -56,10 +56,11 @@ function Experience() {
         <div className="absolute z-0 w-1 h-full bg-white shadow-md inset-0 left-13 xs:left-9 xs:top-6 md:mx-auto md:right-0 md:left-0"></div>
 
         {experienceData.map((item, index) => (
-          <div key={item.id ?? index}>
-            <ExperienceComponent sendData={item} left={index % 2 === 1} />
-
+          <div
+            key={item.id ?? index}
             
+          >
+            <ExperienceComponent sendData={item} left={index % 2 === 1} />
           </div>
         ))}
       </div>
