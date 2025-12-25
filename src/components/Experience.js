@@ -54,12 +54,13 @@ function Experience() {
       </div>
       <div className="relative container mx-auto px-6 flex flex-col space-y-8">
         <div className="absolute z-0 w-1 h-full bg-white shadow-md inset-0 left-13 xs:left-9 xs:top-6 md:mx-auto md:right-0 md:left-0"></div>
+
         {experienceData.map((item, index) => (
-          <ExperienceComponent
-            key={item.id ?? index}
-            sendData={item} // pass full object
-            left={index % 2 === 1} // optional: alternate sides
-          />
+          <div key={item.id ?? index}>
+            <ExperienceComponent sendData={item} left={index % 2 === 1} />
+
+            
+          </div>
         ))}
       </div>
     </div>

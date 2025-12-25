@@ -5,7 +5,7 @@ import { MapPin, Calendar, GraduationCap, BookOpen } from "lucide-react";
 
 const ExperienceComponent = ({ sendData, left = false }) => {
   if (!sendData) return null;
-  
+
   const {
     CompanyName,
     Role,
@@ -51,7 +51,6 @@ const ExperienceComponent = ({ sendData, left = false }) => {
 
   return (
     <div className="relative z-10">
-      
       <div className="relative timeline-img " />
       <div
         className={`timeline-container ${
@@ -65,23 +64,21 @@ const ExperienceComponent = ({ sendData, left = false }) => {
         <div className="bg-white p-6 rounded-md shadow-md">
           {/* Header: Role + Company */}
           <div className="flex items-start gap-4">
-          <div className="w-12 h-12 mt-2 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center overflow-hidden">
-          {ImageLink ? (
-            <img
-              src={ImageLink}
-              className="w-full h-full object-cover"
-            />
-          ) : (
-            <span className="text-blue-700 text-xl">🎓</span>
-          )}
-        </div>
-        <div className="min-w-0">
-          <h2 className="text-xl md:text-2xl font-bold text-gray-900 m-0">
-            {Role}
-          </h2>
-          <p className=" text-blue-600 font-semibold">{CompanyName}</p>
+            <div className="w-12 h-12 mt-2 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center overflow-hidden">
+              {ImageLink ? (
+                <img src={ImageLink} className="w-full h-full object-cover" />
+              ) : (
+                <span className="text-blue-700 text-xl">🎓</span>
+              )}
+            </div>
+
+            <div className="min-w-0">
+              <h2 className="text-xl md:text-2xl font-bold text-gray-900 m-0">
+                {Role}
+              </h2>
+              <p className=" text-blue-600 font-semibold">{CompanyName}</p>
+            </div>
           </div>
-</div>
           {/* Meta row */}
           <div className="mt-3 flex flex-wrap gap-3 text-sm text-gray-500">
             {Location && (
@@ -106,7 +103,9 @@ const ExperienceComponent = ({ sendData, left = false }) => {
           {Array.isArray(Responsibilities) && Responsibilities.length > 0 && (
             <ul className="mt-4 list-disc list-outside ml-4 space-y-1 text-sm text-gray-700">
               {Responsibilities.map((item, idx) => (
-                <li key={idx} className="text-justify pr-6">{item}</li>
+                <li key={idx} className="text-justify pr-6">
+                  {item}
+                </li>
               ))}
             </ul>
           )}
@@ -127,6 +126,11 @@ const ExperienceComponent = ({ sendData, left = false }) => {
 
           {/* //arrange the available data here. */}
         </div>
+        <div
+          className={`timeline-container ${left ? "mr-auto" : "ml-auto"}`}
+          aria-hidden="true"
+        />
+        hey
       </div>
     </div>
   );
