@@ -1,4 +1,5 @@
 import React from "react";
+import { ExternalLink } from "lucide-react";
 const monthNames = [
   "Jan",
   "Feb",
@@ -43,81 +44,63 @@ function CertificationComponent({ data }) {
 
   return (
     <div className="col-span-full">
-      <div className="flex items-center justify-between gap-4 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-        <div className="flex items-start gap-4">
-          {/* Left icon box */}
-          <div className="flex h-12 w-12 flex-none items-center justify-center rounded-xl bg-blue-50">
-            {/* badge icon */}
-            <svg
-              className="h-6 w-6 text-blue-600"
-              viewBox="0 0 24 24"
-              fill="none"
-              aria-hidden="true"
-            >
-              <path
-                d="M12 2l3 3h4v4l3 3-3 3v4h-4l-3 3-3-3H5v-4l-3-3 3-3V5h4l3-3z"
-                stroke="currentColor"
-                strokeWidth="1.5"
-              />
-              <path
-                d="M9.5 12l1.8 1.8L14.8 10"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+      <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div className="flex items-start gap-4 min-w-0">
+            <div className="flex items-start gap-4">
+              {/* Left icon box */}
+              <div className="flex h-12 w-12 flex-none items-center justify-center rounded-xl bg-blue-50">
+                {/* badge icon */}
+                <svg
+                  className="h-6 w-6 text-blue-600"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 2l3 3h4v4l3 3-3 3v4h-4l-3 3-3-3H5v-4l-3-3 3-3V5h4l3-3z"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                  />
+                  <path
+                    d="M9.5 12l1.8 1.8L14.8 10"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+
+              {/* Content */}
+              <div className="min-w-0">
+                <h3 className="m-0 text-lg font-semibold text-gray-900 text-left ">
+                  {Title}
+                </h3>
+                <div className="mt-0 text-base font-semibold text-blue-700 text-left">
+                  {InstitutionName}
+                </div>
+                <div className="mt-0 text-sm text-gray-600 text-left">
+                  Valid: {fromDisplay} - {toDisplay}
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Content */}
-          <div className="min-w-0">
-            <h3 className="m-0 text-lg font-semibold text-gray-900">{Title}</h3>
-            <div className="mt-0 text-base font-semibold text-blue-700 text-left">
-              {InstitutionName}
-            </div>
-            <div className="mt-0 text-sm text-gray-600 text-left">
-              Valid: {fromDisplay} - {toDisplay}
-            </div>
-          </div>
-        </div>
-
-        {/* Right action */}
-        <div className="flex flex-none items-center">
-          {hasLink ? (
-            <a
-              href={Link}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50"
-            >
-              View Certificate
-              <svg
-                className="h-4 w-4"
-                viewBox="0 0 24 24"
-                fill="none"
-                aria-hidden="true"
+          {/* Right action */}
+          <div className="flex flex-none items-center w-full md:w-auto">
+            {hasLink ? (
+              <a
+                href={Link}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex w-full md:w-auto justify-center items-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50"
               >
-                <path
-                  d="M14 3h7v7"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M10 14L21 3"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M21 14v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h6"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </a>
-          ) : null}
+                View Certificate
+                <ExternalLink size={16} className="text-gray-700" />
+              </a>
+            ) : null}
+          </div>
         </div>
       </div>
     </div>

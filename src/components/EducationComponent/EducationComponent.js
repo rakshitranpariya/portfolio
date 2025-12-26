@@ -2,7 +2,20 @@ import { React, useState } from "react";
 
 import { MapPin, CalendarDays } from "lucide-react";
 
-const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const MONTHS = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
 const monthLabel = (m) => MONTHS[(Number(m) || 1) - 1];
 
 function EducationComponent({ data }) {
@@ -13,8 +26,7 @@ function EducationComponent({ data }) {
     return <p>Loading...</p>;
   }
 
-
-   const {
+  const {
     Degree,
     Major,
     InstitutionName,
@@ -30,9 +42,11 @@ function EducationComponent({ data }) {
     Courses,
   } = data;
 
-   const formattedDate = `${monthLabel(FromMonth)} ${FromYear} - ${monthLabel(ToMonth)} ${ToYear}`;
+  const formattedDate = `${monthLabel(FromMonth)} ${FromYear} - ${monthLabel(
+    ToMonth
+  )} ${ToYear}`;
   return (
-    <div className="bg-white rounded-xl shadow-md border border-gray-100 p-6">
+    <div className="flex flex-col h-full min-h-0 bg-white rounded-xl shadow-md border border-gray-100 p-6 md:max-h-96 ">
       {/* Header row: icon + titles */}
       <div className="flex items-start gap-4">
         <div className="w-12 h-12 rounded-lg mt-2 bg-blue-50 border border-blue-100 flex items-center justify-center overflow-hidden">
@@ -69,35 +83,30 @@ function EducationComponent({ data }) {
           <span>{formattedDate}</span>
         </div>
 
-        {Gpa != null && (
+        {/* {Gpa != null && (
           <div className="text-gray-600 font-medium">
             GPA: {Gpa}
             {TotalGpa ? ` / ${TotalGpa}` : ""}
           </div>
-        )}
+        )} */}
       </div>
 
       {/* Optional Description */}
-      {Description && (
+      {/* {Description && (
         <p className="mt-4 text-sm text-gray-700">{Description}</p>
-      )}
+      )} */}
 
       {/* Optional Courses (chips) */}
       {Array.isArray(Courses) && Courses.length > 0 && (
-        <div className="mt-4 flex flex-wrap gap-2">
-          {Courses.slice(0, 8).map((c, i) => (
+        <div className="mt-3 min-h-24 grow h-full flex flex-wrap gap-2 overflow-y-auto overflow-x-hidden pr-2 max-h-24 no-scrollbar">
+          {Courses.map((c, i) => (
             <span
               key={i}
-              className="px-2.5 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full border border-blue-100"
+              className=" px-2.5 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full border border-blue-100 "
             >
               {c}
             </span>
           ))}
-          {Courses.length > 8 && (
-            <span className="text-xs text-gray-500 self-center">
-              +{Courses.length - 8} more
-            </span>
-          )}
         </div>
       )}
     </div>
