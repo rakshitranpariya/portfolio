@@ -31,7 +31,7 @@ function Experience() {
         </h2>
         <div className="mt-3 h-1 w-20 bg-blue-600 mx-auto rounded" />
       </div>
-      <div className="relative container mx-auto px-6 flex flex-col space-y-8">
+      <div className="relative mx-auto px-6 flex flex-col space-y-8">
         <div className="absolute z-0 w-1 h-full bg-white shadow-md inset-0 left-13 xs:left-9 xs:top-6 md:mx-auto md:right-0 md:left-0"></div>
 
         {experienceData.map((item, index) => (
