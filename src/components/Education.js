@@ -4,24 +4,23 @@ import { useState } from "react";
 import EducationComponent from "./EducationComponent/EducationComponent";
 import CertificationComponent from "./EducationComponent/CertificationComponent";
 
+const fetchData = async () => {
+  try {
+    const response = await axios.get(
+      "https://62e2fnrj4g.execute-api.us-east-2.amazonaws.com/prod/education-function"
+    );
+    setEducationData(response.data);
+    console.log(educationData);
+  } catch (error) {
+    console.error("Error fecthing data:", error.message);
+  }
+};
+useEffect(() => {
+  fetchData();
+}, []);
+
 function Education() {
   const [educationData, setEducationData] = useState([]);
-
-  const fetchData = async () => {
-    try {
-      const response = await axios.get(
-        "https://62e2fnrj4g.execute-api.us-east-2.amazonaws.com/prod/education-function"
-      );
-      setEducationData(response.data);
-      console.log(educationData);
-    } catch (error) {
-      console.error("Error fecthing data:", error.message);
-    }
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
 
   const educationItems = educationData.filter((x) => x.Type === "Education");
   const certificationItems = educationData.filter(

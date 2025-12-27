@@ -1,7 +1,4 @@
-import { React, useState } from "react";
-import styles from "./ExperienceComponent.module.css";
-
-import { MapPin, Calendar, GraduationCap, BookOpen } from "lucide-react";
+import { MapPin, Calendar, BookOpen } from "lucide-react";
 
 const ExperienceComponent = ({ sendData, left = false }) => {
   if (!sendData) return null;
@@ -18,7 +15,6 @@ const ExperienceComponent = ({ sendData, left = false }) => {
     Responsibilities,
     TechStack,
     ImageLink,
-    id,
   } = sendData;
 
   if (!sendData || sendData.length === 0) {
@@ -56,9 +52,9 @@ const ExperienceComponent = ({ sendData, left = false }) => {
         className={`relative flex flex-col md:flex-row items-start md:gap-6 `}
       >
         <div
-          className={`order-2 ${left ? "md:order-1" : "md:order-2"} timeline-container ${
-            left ? "timeline-container-left " : ""
-          }`}
+          className={`order-2 ${
+            left ? "md:order-1" : "md:order-2"
+          } timeline-container ${left ? "timeline-container-left " : ""}`}
         >
           <div
             className={`timeline-pointer ${
@@ -72,7 +68,11 @@ const ExperienceComponent = ({ sendData, left = false }) => {
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 mt-0 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center overflow-hidden">
                 {ImageLink ? (
-                  <img src={ImageLink} className="w-full h-full object-cover" />
+                  <img
+                    src={ImageLink}
+                    alt={`${Role} at ${CompanyName}`}
+                    className="w-full h-full object-cover"
+                  />
                 ) : (
                   <span className="text-blue-700 text-xl">🎓</span>
                 )}
@@ -93,7 +93,7 @@ const ExperienceComponent = ({ sendData, left = false }) => {
                   {Location}
                 </span>
               )}
-             
+
               {EmploymentType && (
                 <span className="flex items-center gap-1">
                   <BookOpen size={14} className="text-gray-400" />
@@ -136,14 +136,16 @@ const ExperienceComponent = ({ sendData, left = false }) => {
         </div>
 
         <div
-          className={` xs:pl-28 md:pl-0 ${left ? "md:order-2" : "md:order-1"}   mt-9 ${
+          className={` xs:pl-28 md:pl-0 ${
+            left ? "md:order-2" : "md:order-1"
+          }   mt-9 ${
             left ? "md:mr-auto" : "md:ml-auto"
           } aria-hidden="true" relative `}
         >
-           <span className="hidden md:flex items-center gap-1 font-bold  md:text-lg text-gray-600 ">
-                {/* <Calendar size={21} className="text-gray-10000 " /> */}
-                {formattedDate}
-              </span>
+          <span className="hidden md:flex items-center gap-1 font-bold  md:text-lg text-gray-600 ">
+            {/* <Calendar size={21} className="text-gray-10000 " /> */}
+            {formattedDate}
+          </span>
         </div>
       </div>
     </div>

@@ -1,10 +1,7 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
 import ExperienceComponent from "./ExperienceComponent/ExperienceComponent";
-import styles from "./sectionCard.module.css";
-
-import { MapPin, Calendar, GraduationCap, BookOpen } from "lucide-react";
 
 function Experience() {
   const [experienceData, setExperienceData] = useState([]);
@@ -12,7 +9,6 @@ function Experience() {
   useEffect(() => {
     fetchData();
   }, []);
-  const align = "left";
   const fetchData = async () => {
     try {
       const response = await axios.get(
@@ -27,23 +23,6 @@ function Experience() {
     }
   };
 
-  const {
-    CompanyName,
-    Role,
-    EmploymentType,
-    Location,
-    FromMonth,
-    FromYear,
-    ToMonth,
-    ToYear,
-    Responsibilities,
-    TechStack,
-    ImageLink,
-    id,
-  } = experienceData;
-  console.log(experienceData);
-  const formattedDate = `${FromMonth} ${FromYear} - ${ToMonth} ${ToYear}`;
-
   return (
     <div className="antialiased bg-gray-100 text-gray-800 py-5">
       <div className="text-center mb-1">
@@ -56,10 +35,7 @@ function Experience() {
         <div className="absolute z-0 w-1 h-full bg-white shadow-md inset-0 left-13 xs:left-9 xs:top-6 md:mx-auto md:right-0 md:left-0"></div>
 
         {experienceData.map((item, index) => (
-          <div
-            key={item.id ?? index}
-            
-          >
+          <div key={item.id ?? index}>
             <ExperienceComponent sendData={item} left={index % 2 === 1} />
           </div>
         ))}

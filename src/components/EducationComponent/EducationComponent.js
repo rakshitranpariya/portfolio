@@ -19,8 +19,6 @@ const MONTHS = [
 const monthLabel = (m) => MONTHS[(Number(m) || 1) - 1];
 
 function EducationComponent({ data }) {
-  const [activeDotIndex, setActiveDotIndex] = useState(0);
-
   if (!data || data.length === 0) {
     console.log("No data received yet.");
     return <p>Loading...</p>;
@@ -35,10 +33,7 @@ function EducationComponent({ data }) {
     FromYear,
     ToMonth,
     ToYear,
-    Gpa,
-    TotalGpa,
     ImageLink,
-    Description,
     Courses,
   } = data;
 
