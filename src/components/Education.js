@@ -1,27 +1,26 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
 import EducationComponent from "./EducationComponent/EducationComponent";
 import CertificationComponent from "./EducationComponent/CertificationComponent";
 
-const fetchData = async () => {
-  try {
-    const response = await axios.get(
-      "https://62e2fnrj4g.execute-api.us-east-2.amazonaws.com/prod/education-function"
-    );
-    setEducationData(response.data);
-    console.log(educationData);
-  } catch (error) {
-    console.error("Error fecthing data:", error.message);
-  }
-};
-useEffect(() => {
-  fetchData();
-}, []);
-
 function Education() {
   const [educationData, setEducationData] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://62e2fnrj4g.execute-api.us-east-2.amazonaws.com/prod/education-function"
+        );
+        setEducationData(Array.isArray(response.data) ? response.data : []);
+        // console.log("API data:", response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error.message);
+      }
+    };
 
+    fetchData();
+  }, []);
   const educationItems = educationData.filter((x) => x.Type === "Education");
   const certificationItems = educationData.filter(
     (x) => x.Type === "Certification"

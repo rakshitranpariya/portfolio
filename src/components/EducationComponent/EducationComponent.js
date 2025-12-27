@@ -1,5 +1,3 @@
-import { React, useState } from "react";
-
 import { MapPin, CalendarDays } from "lucide-react";
 
 const MONTHS = [
