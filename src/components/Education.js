@@ -53,9 +53,11 @@ function Education() {
             Certifications
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {certificationItems.map((item) => {
-              return <CertificationComponent key={item.id} data={item} />;
-            })}
+            {certificationItems
+              .sort((a, b) => Number(a.id) - Number(b.id))
+              .map((item) => (
+                <CertificationComponent key={item.id} data={item} />
+              ))}
           </div>
         </div>
       </div>
