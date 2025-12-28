@@ -13,7 +13,7 @@ function Education() {
           "https://62e2fnrj4g.execute-api.us-east-2.amazonaws.com/prod/education-function"
         );
         setEducationData(Array.isArray(response.data) ? response.data : []);
-        // console.log("API data:", response.data);
+        console.log("API data:", response.data);
       } catch (error) {
         console.error("Error fetching data:", error.message);
       }
@@ -43,9 +43,11 @@ function Education() {
             Education
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {educationItems.map((item) => {
-              return <EducationComponent key={item.id} data={item} />;
-            })}
+            {educationItems
+              .sort((a, b) => Number(a.id) - Number(b.id))
+              .map((item) => {
+                return <EducationComponent key={item.id} data={item} />;
+              })}
           </div>
         </div>
         <div className="text-center mb-10">
