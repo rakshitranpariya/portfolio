@@ -23,7 +23,7 @@ body {
 
 @layer components {
   .timeline-img {
-    @apply w-5 h-5 object-cover bg-blue-700 rounded-full shadow-md border-4 left-[34px] xs:left-4 xs:top-24 md:top-15 border-white xs:absolute md:mx-auto md:left-0 md:right-0;
+    @apply w-5 h-5 object-cover bg-blue-700 rounded-full ml-[22px] xs:ml-0 shadow-md border-4 left-16 xs:left-1 xs:top-19 md:top-15 border-white xs:absolute md:mx-auto md:left-0 md:right-0;
   }
   /* w-5 h-5 rounded-full bg-blue-700 border-3 border-white shadow-md */
   .timeline-container {
@@ -33,7 +33,7 @@ body {
     @apply md:ml-0  md:pl-0 md:w-1/2 md:pr-16;
   }
   .timeline-pointer {
-    @apply absolute inset-0 left-9 h-4 w-4 transform rotate-45 bg-white xs:top-11 xs:left-26 md:left-15;
+    @apply absolute inset-0 left-6 h-4 w-4 transform rotate-45 bg-white xs:top-11 xs:left-26 md:left-15;
   }
   .timeline-pointer-left {
     @apply md:left-auto md:right-15;

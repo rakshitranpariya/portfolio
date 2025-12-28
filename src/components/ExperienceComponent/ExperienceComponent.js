@@ -47,7 +47,7 @@ const ExperienceComponent = ({ sendData, left = false }) => {
 
   return (
     <div className="relative z-10 ">
-      <div className="relative timeline-img " />
+      <div className=" timeline-img " />
       <div
         className={`relative flex flex-col md:flex-row items-start md:gap-6 `}
       >
