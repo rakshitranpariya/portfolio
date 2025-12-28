@@ -23,7 +23,7 @@ body {
 
 @layer components {
   .timeline-img {
-    @apply w-5 h-5 object-cover bg-blue-700 rounded-full ml-[22px] xs:ml-0 shadow-md border-4 left-16 xs:left-1 xs:top-19 md:top-15 border-white xs:absolute md:mx-auto md:left-0 md:right-0;
+    @apply w-5 h-5 object-cover bg-blue-700 rounded-full ml-[22px] xs:ml-0 shadow-md border-4 left-16 xs:left-1 xs:top-19 md:top-10 border-white xs:absolute md:mx-auto md:left-0 md:right-0;
   }
   /* w-5 h-5 rounded-full bg-blue-700 border-3 border-white shadow-md */
   .timeline-container {
