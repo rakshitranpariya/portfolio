@@ -18,10 +18,11 @@ function Home() {
                   Rakshit <br /> Ranpariya.
                 </span>
               </div>
-              <div class="sub-line">
-                A passionate Software Developer <br /> who loves building
-                Effecient Solutions.
+              <div className="sub-line">
+                Transforming complex problems <br /> into elegant, scalable
+                solutions.
               </div>
+
               <a
                 href={resumePDF}
                 download="Rakshit_Ranpariya_Resume.pdf"
