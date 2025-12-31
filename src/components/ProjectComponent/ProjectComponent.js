@@ -1,12 +1,34 @@
 import React from "react";
+import clsx from "clsx";
+import { ClipboardList, HelpCircle, Lightbulb } from "lucide-react";
+import { useState } from "react";
+import flip_image from "../../Images/flip.png";
 import { CalendarDays, Github, ExternalLink } from "lucide-react";
 
-const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const MONTHS = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
 const monthLabel = (m) => MONTHS[(Number(m) || 1) - 1];
 
 export default function ProjectComponent({ data }) {
-  if (!data) return null;
+  const [isFlipped, setIsFlipped] = useState(false);
 
+  if (!data) return null;
+  const handleCardClick = () => {
+    setIsFlipped((prev) => !prev);
+    console.log("Card flipped!", { data, isFlipped });
+  };
   const {
     ProjectName,
     FromMonth,
@@ -19,77 +41,107 @@ export default function ProjectComponent({ data }) {
     Link,
   } = data;
 
-  const formattedDate = `${monthLabel(FromMonth)} ${FromYear} – ${monthLabel(ToMonth)} ${ToYear}`;
+  const formattedDate = `${monthLabel(FromMonth)} ${FromYear} – ${monthLabel(
+    ToMonth
+  )} ${ToYear}`;
 
   const hasValidLink = Link && Link !== "NA";
 
   return (
-    <div className="bg-white rounded-xl shadow-md border border-gray-100 p-6 flex flex-col h-full flex flex-col h-full">
-      {/* Title */}
-      <h3 className="text-xl font-extrabold text-gray-900">
-        {ProjectName}
-      </h3>
-
-      {/* Date row */}
-      <div className="mt-3 flex items-center gap-2 text-sm text-gray-500">
-        <CalendarDays size={16} className="text-gray-400" />
-        <span>{formattedDate}</span>
-      </div>
-
-      {/* Description */}
-      {Description && (
-        <p className="mt-5 text-sm text-gray-600 leading-relaxed">
-          {Description}
-        </p>
+    <div
+      onClick={handleCardClick}
+      className={clsx(
+        " group rounded-xl  relative perspective-1000 flex flex-col h-full flex flex-col perspective-1000",
+        {
+          "[&_.card-inner]:[transform:rotateY(180deg)]": isFlipped,
+        }
       )}
-
-      {/* Key Achievements */}
-      {Array.isArray(Responsibilities) && Responsibilities.length > 0 && (
-        <div className="mt-5">
-          <div className="text-sm font-bold text-gray-900">
-            Key Achievements:
+    >
+      <div className=" h-full w-full transition-transform duration-500 [transform-style:preserve-3d] card-inner">
+        <div className="card-front flex flex-col bg-white backface-hidden p-6 rounded-xl shadow-md border border-gray-100 h-full w-full [backface-visibility:hidden]">
+          {/* Absolute Positioned Flip Icon */}
+          <img
+            src={flip_image}
+            alt="Flip Icon"
+            className="absolute top-4 right-4 w-6 h-6 cursor-pointer z-20 opacity-50 hover:opacity-100 transition-opacity"
+          />
+          {/* Title */}
+          <div className="flex flex-row justify-between items-start  gap-2 mb-2">
+            <h3 className="text-xl font-extrabold text-gray-900">
+              {ProjectName}
+            </h3>
           </div>
-          <ul className="mt-2 list-disc ml-5 space-y-2 text-sm text-gray-600">
-            {Responsibilities.map((r, i) => (
-              <li key={i}>{r}</li>
-            ))}
-          </ul>
-        </div>
-      )}
 
-      {/* Tech chips */}
-      {Array.isArray(TechStack) && TechStack.length > 0 && (
-        <div className="mt-5 flex flex-wrap gap-2">
-          {TechStack.map((t, i) => (
-            <span
-              key={i}
-              className="px-2.5 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full border border-blue-100"
-            >
-              {t}
-            </span>
-          ))}
-        </div>
-      )}
+          {/* Date row */}
+          <div className="mt-0 flex items-center gap-2 text-sm text-gray-500">
+            <CalendarDays size={16} className="text-gray-400" />
+            <span>{formattedDate}</span>
+          </div>
 
-      {/* Bottom button */}
-      <div className="mt-6 pt-4 border-t border-gray-100 mt-auto">
-        <a
-          href={hasValidLink ? Link : "#"}
-          target={hasValidLink ? "_blank" : undefined}
-          rel={hasValidLink ? "noreferrer" : undefined}
-          className={`w-full inline-flex items-center justify-center gap-2 rounded-lg border px-4 py-2 text-sm font-semibold
-            ${hasValidLink
-              ? "border-gray-200 text-gray-700 hover:bg-gray-50"
-              : "border-gray-100 text-gray-400 cursor-not-allowed"
+          {/* Description */}
+          {Description && (
+            <p className="mt-3 text-sm text-gray-600 leading-relaxed">
+              {Description}
+            </p>
+          )}
+
+          {/* Tech chips */}
+          {Array.isArray(TechStack) && TechStack.length > 0 && (
+            <div className="mt-1 mb-2 flex flex-wrap gap-2">
+              {TechStack.map((t, i) => (
+                <span
+                  key={i}
+                  className="px-2.5 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full border border-blue-100"
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+          )}
+          {/* Bottom button */}
+          <div className=" pt-4 border-t border-gray-100 mt-auto ">
+            <a
+              href={hasValidLink ? Link : "#"}
+              target={hasValidLink ? "_blank" : undefined}
+              rel={hasValidLink ? "noreferrer" : undefined}
+              className={`w-full inline-flex items-center justify-center gap-2 rounded-lg border px-4 py-2 text-sm font-semibold
+            ${
+              hasValidLink
+                ? "border-gray-200 text-gray-700 hover:bg-gray-50"
+                : "border-gray-100 text-gray-400 cursor-not-allowed"
             }`}
-          onClick={(e) => {
-            if (!hasValidLink) e.preventDefault();
-          }}
-        >
-          <Github size={16} />
-          View on GitHub
-          <ExternalLink size={16} className="ml-1" />
-        </a>
+              onClick={(e) => {
+                e.stopPropagation();
+                if (!hasValidLink) e.preventDefault();
+              }}
+            >
+              <Github size={16} />
+              View on GitHub
+              <ExternalLink size={16} className="ml-1" />
+            </a>
+          </div>
+        </div>
+        <div className="card-back absolute inset-0 backface-hidden rotate-y-180 bg-white p-6 rounded-xl shadow-md border border-gray-100 h-full w-full overflow-y-auto [transform:rotateY(180deg)] [backface-visibility:hidden]">
+          {/* Absolute Positioned Flip Icon */}
+          <img
+            src={flip_image}
+            alt="Flip Icon"
+            className="absolute top-4 right-4 w-6 h-6 cursor-pointer z-20 opacity-50 hover:opacity-100 transition-opacity"
+          />
+          {/* Key Achievements */}
+          {Array.isArray(Responsibilities) && Responsibilities.length > 0 && (
+            <div className="mt-5">
+              <div className="text-sm font-bold text-gray-900">
+                Key Achievements:
+              </div>
+              <ul className="mt-2 list-disc ml-5 space-y-2 text-sm text-gray-600">
+                {Responsibilities.map((r, i) => (
+                  <li key={i}>{r}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
