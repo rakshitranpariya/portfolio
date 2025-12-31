@@ -1,6 +1,5 @@
 import React from "react";
 import clsx from "clsx";
-import { ClipboardList, HelpCircle, Lightbulb } from "lucide-react";
 import { useState } from "react";
 import flip_image from "../../Images/flip.png";
 import { CalendarDays, Github, ExternalLink } from "lucide-react";
