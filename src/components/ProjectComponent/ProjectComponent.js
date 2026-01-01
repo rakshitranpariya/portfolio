@@ -123,7 +123,7 @@ export default function ProjectComponent({ data }) {
           />
           {/* Key Achievements */}
           {Array.isArray(Responsibilities) && Responsibilities.length > 0 && (
-            <div className="mt-5">
+            <div className="mt-2">
               <div className="text-sm font-bold text-gray-900">
                 Key Achievements:
               </div>
