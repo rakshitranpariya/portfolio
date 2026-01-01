@@ -125,7 +125,7 @@ export default function ProjectComponent({ data }) {
           {Array.isArray(Responsibilities) && Responsibilities.length > 0 && (
             <div className="mt-2">
               <div className="text-sm font-bold text-gray-900">
-                Key Achievements:
+                Contributions:
               </div>
               <ul className="mt-2 list-disc ml-5 space-y-2 text-sm text-gray-600">
                 {Responsibilities.map((r, i) => (
