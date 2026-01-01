@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.7fccbf3f.css",
-    "main.js": "/portfolio/static/js/main.7a9a8528.js",
+    "main.css": "/portfolio/static/css/main.95ee9f4d.css",
+    "main.js": "/portfolio/static/js/main.954c490c.js",
     "static/js/488.e3cfe9d3.chunk.js": "/portfolio/static/js/488.e3cfe9d3.chunk.js",
     "static/media/generated-image.png": "/portfolio/static/media/generated-image.0a60809bd5a4d7f820c4.png",
     "static/media/eduaction-gif.gif": "/portfolio/static/media/eduaction-gif.95e762bb9d1734220be6.gif",
     "static/media/Rakshit_Ranpariya_Resume.pdf": "/portfolio/static/media/Rakshit_Ranpariya_Resume.660775e9d42b1abeea9d.pdf",
     "index.html": "/portfolio/index.html",
-    "main.7fccbf3f.css.map": "/portfolio/static/css/main.7fccbf3f.css.map",
-    "main.7a9a8528.js.map": "/portfolio/static/js/main.7a9a8528.js.map",
+    "main.95ee9f4d.css.map": "/portfolio/static/css/main.95ee9f4d.css.map",
+    "main.954c490c.js.map": "/portfolio/static/js/main.954c490c.js.map",
     "488.e3cfe9d3.chunk.js.map": "/portfolio/static/js/488.e3cfe9d3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7fccbf3f.css",
-    "static/js/main.7a9a8528.js"
+    "static/css/main.95ee9f4d.css",
+    "static/js/main.954c490c.js"
   ]
 }
