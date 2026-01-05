@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./index.css"; // must be before component CSS imports
-import { Helmet } from "react-helmet-async";
 
 import "./App.css";
 
@@ -28,7 +27,7 @@ function App() {
     <div>
       {/* navigation */}
       <div className="nav container d-none d-sm-block ">
-        <Helmet>
+        
           <title>Rakshit Ranpariya | React Developer</title>
           <meta
             name="description"
@@ -38,7 +37,7 @@ function App() {
             rel="canonical"
             href="https://rakshitranpariya.github.io/portfolio/"
           />
-        </Helmet>
+        
         <nav>
           <div className="options">
             <Link
