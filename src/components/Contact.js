@@ -23,8 +23,9 @@ function Contact() {
         {/* Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
           {/* Email */}
-          <div className=" rounded-[40px] bg-white/2 backdrop-blur-sm border border-white/30 shadow-xl shadow-black/10 p-6 text-center">
-            <div className="mx-auto w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center text-blue-700">
+
+          <div className=" rounded-[40px] bg-white/5 backdrop-blur-sm border border-white/30 shadow-xl shadow-black/10  p-6 text-center">
+            <div className="mx-auto w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center text-blue-700 outline outline-blue-500/30">
               <Mail size={22} />
             </div>
             <h3 className="mt-4 text-lg font-bold text-gray-900">Email</h3>
@@ -35,10 +36,9 @@ function Contact() {
               rakshitranpariya@gmail.com
             </a>
           </div>
-
           {/* Phone */}
           <div className=" rounded-[40px] bg-white/2 backdrop-blur-sm border border-white/30 shadow-xl shadow-black/10  p-6 text-center">
-            <div className="mx-auto w-14 h-14 rounded-full bg-green-50 flex items-center justify-center text-green-700">
+            <div className="mx-auto w-14 h-14 rounded-full bg-green-50 flex items-center justify-center text-green-700 outline outline-green-500/30">
               <Phone size={22} />
             </div>
             <h3 className="mt-4 text-lg font-bold text-gray-900">Phone</h3>
@@ -49,10 +49,9 @@ function Contact() {
               +1 (782) 882-2958
             </a>
           </div>
-
           {/* LinkedIn */}
           <div className=" rounded-[40px]  bg-white/2 backdrop-blur-sm border border-white/30 shadow-xl shadow-black/10 p-6 text-center">
-            <div className="mx-auto w-14 h-14 rounded-full bg-sky-50 flex items-center justify-center text-sky-700">
+            <div className="mx-auto w-14 h-14 rounded-full bg-sky-50 flex items-center justify-center text-sky-700 outline outline-sky-500/30">
               <Linkedin size={22} />
             </div>
             <h3 className="mt-4 text-lg font-bold text-gray-900">LinkedIn</h3>

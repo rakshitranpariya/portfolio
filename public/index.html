@@ -73,6 +73,21 @@ into elegant, scalable solutions. Explore my latest React projects, case studies
       name="twitter:image"
       content="https://rakshitranpariya.github.io/portfolio/preview.png"
     />
+    <svg style="position: absolute; width: 0; height: 0" aria-hidden="true">
+      <defs>
+        <filter id="liquid-glass" x="-50%" y="-50%" width="200%" height="200%">
+          <feTurbulence baseFrequency=".05" numOctaves="2" result="noise" />
+          <feDisplacementMap
+            in="SourceGraphic"
+            in2="noise"
+            scale="12"
+            xChannelSelector="R"
+            yChannelSelector="G"
+          />
+          <feGaussianBlur stdDeviation="1" />
+        </filter>
+      </defs>
+    </svg>
   </head>
   <body>
     <div id="root"></div>
