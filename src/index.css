@@ -33,16 +33,33 @@ body {
     @apply md:ml-0  md:pl-0 md:w-1/2 md:pr-16;
   }
   .timeline-pointer {
-    @apply absolute  inset-5 left-[22px] h-5 w-5 transform  -top-5 rotate-[135deg] xs:left-15 xs:rotate-[45deg] xs:top-10 md:rotate-45 md:left-10 md:top-10 bg-transparent backdrop-blur-lg border border-black/20 shadow-lg shadow-black/60   ;
-    clip-path: polygon(
-      0 0,
-      100% 100%,
-      0 100%
-    ); 
+    @apply absolute  inset-5 left-[22px] h-5 w-5 transform  -top-5 rotate-[135deg] xs:left-15 xs:rotate-[45deg] xs:top-10 md:rotate-45 md:left-10 md:top-10 bg-transparent backdrop-blur-lg border border-black/20 shadow-lg shadow-black/60;
+    clip-path: polygon(0 0, 100% 100%, 0 100%);
   }
 
   .timeline-pointer-left {
     @apply md:left-auto left-[22px] rotate-[225deg] xs:rotate-[135deg] xs:left-15  md:right-10 md:rotate-[-45deg];
     clip-path: polygon(0 100%, 100% 100%, 100% 0); /* Right-pointing arrow */
+  }
+}
+.fixed-wallpaper {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background-image: url("./Images/Untitleddesign.png") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  z-index: -1 !important;
+}
+
+/* Mobile Safari fix */
+@supports (-webkit-touch-callout: none) {
+  .fixed-wallpaper {
+    background-attachment: scroll; /* Fallback for iOS Safari */
+    will-change: transform;
   }
 }

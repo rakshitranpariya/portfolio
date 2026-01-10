@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./index.css"; // must be before component CSS imports
-import imageFixedWallpaper from "./Images/image1.png";
+import imageFixedWallpaper from "./Images/Untitleddesign.png";
 import "./App.css";
 
 import { Link, Element } from "react-scroll";
@@ -24,11 +24,15 @@ function App() {
     setMenuOpen(false);
   };
   return (
-    <div>
+    <div className="min-h-screen">
       {/* navigation */}
       <div
-        className="fixed inset-0 z-[-1] bg-cover bg-center bg-no-repeat bg-fixed"
-        style={{ backgroundImage: `url(${imageFixedWallpaper})` }}
+        className="fixed inset-0 z-[-1] bg-cover bg-center bg-no-repeat w-screen h-screen"
+        style={{
+          backgroundImage: `url(${imageFixedWallpaper})`,
+          transform: "translateZ(0)", // GPU acceleration fix
+          willChange: "transform",
+        }}
       />
       <div className="nav container d-none d-sm-block ">
         <title>Rakshit Ranpariya | React Developer</title>
