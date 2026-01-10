@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.9c669316.css",
-    "main.js": "/portfolio/static/js/main.0f4548d4.js",
+    "main.css": "/portfolio/static/css/main.7c83b316.css",
+    "main.js": "/portfolio/static/js/main.7617bb96.js",
     "static/js/488.e3cfe9d3.chunk.js": "/portfolio/static/js/488.e3cfe9d3.chunk.js",
-    "static/media/image1.png": "/portfolio/static/media/image1.76694962501d5f09340a.png",
     "static/media/generated-image.png": "/portfolio/static/media/generated-image.0a60809bd5a4d7f820c4.png",
+    "static/media/Untitleddesign.png": "/portfolio/static/media/Untitleddesign.8e4da4d7f083371e7a61.png",
     "static/media/eduaction-gif.gif": "/portfolio/static/media/eduaction-gif.95e762bb9d1734220be6.gif",
     "static/media/Rakshit_Ranpariya_Resume.pdf": "/portfolio/static/media/Rakshit_Ranpariya_Resume.660775e9d42b1abeea9d.pdf",
     "index.html": "/portfolio/index.html",
-    "main.9c669316.css.map": "/portfolio/static/css/main.9c669316.css.map",
-    "main.0f4548d4.js.map": "/portfolio/static/js/main.0f4548d4.js.map",
+    "main.7c83b316.css.map": "/portfolio/static/css/main.7c83b316.css.map",
+    "main.7617bb96.js.map": "/portfolio/static/js/main.7617bb96.js.map",
     "488.e3cfe9d3.chunk.js.map": "/portfolio/static/js/488.e3cfe9d3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9c669316.css",
-    "static/js/main.0f4548d4.js"
+    "static/css/main.7c83b316.css",
+    "static/js/main.7617bb96.js"
   ]
 }
