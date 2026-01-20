@@ -4,7 +4,7 @@ import { Mail, Phone, Linkedin } from "lucide-react";
 function Contact() {
   return (
     <section id="Contact" className=" ">
-      <div className=" py-5 lg:py-32  h-screen px-4">
+      <div className="mt-0 lg:mt-20  lg:h-screen px-4 py-24 lg:pb-0">
         {/* Title */}
         <div className="text-center mb-10">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white">

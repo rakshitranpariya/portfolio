@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 import { useState } from "react";
-import flip_image from "../../Images/flip.png";
+import flip_image from "../../Images/flip_icon.png";
 import { CalendarDays, Github } from "lucide-react";
 
 const MONTHS = [
@@ -54,7 +54,7 @@ export default function ProjectComponent({ data }) {
         {
           "[&_.card-inner]:[transform:rotateY(180deg)]": isFlipped,
         }
-      ) }
+      )}
     >
       <div className=" h-full w-full transition-transform duration-500 [transform-style:preserve-3d] card-inner z-2">
         <div className="card-front bg-white/2  dark:bg-black/30 backdrop-blur-sm border border-white/30 dark:!border-black/30 shadow-xl shadow-black/10 flex flex-col backface-hidden pt-4 px-4 pb-3 rounded-[40px]  h-full w-full [backface-visibility:hidden]">
@@ -63,7 +63,7 @@ export default function ProjectComponent({ data }) {
             src={flip_image}
             onMouseEnter={handleFlip}
             alt="Flip Icon"
-            className="absolute top-4 right-4 w-6 h-6 cursor-pointer z-20 opacity-50 hover:opacity-100 transition-opacity"
+            className="absolute top-4 right-4 w-6 h-6 cursor-pointer z-20 opacity-50 hover:opacity-100 transition-opacity duration-200 brightness-150 contrast-110 dark:brightness-0 dark:invert"
           />
           {/* Github Link (Below Flip Icon) */}
           {hasValidLink && (
@@ -119,7 +119,7 @@ export default function ProjectComponent({ data }) {
             src={flip_image}
             alt="Flip Icon"
             onMouseEnter={handleFlip}
-            className="absolute top-4 right-4 w-6 h-6 cursor-pointer z-20 opacity-50 hover:opacity-100 transition-opacity"
+            className="absolute top-4 right-4 w-6 h-6 cursor-pointer z-20 opacity-50 hover:opacity-100 transition-opacity duration-200 brightness-150 contrast-110 dark:brightness-0 dark:invert"
           />
           {/* Key Achievements */}
           {Array.isArray(Responsibilities) && Responsibilities.length > 0 && (

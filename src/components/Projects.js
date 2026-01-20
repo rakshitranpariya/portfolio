@@ -25,7 +25,7 @@ export default function Project() {
 
   return (
     <section id="Projects" className=" py-12">
-      <div className="  justify-center w-full px-4">
+      <div className="  justify-center w-full lg:h-screen px-4">
         {/* Title like screenshot */}
         <div className="text-center mb-6">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white">
