@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTheme } from "./contexts/ThemeContext"; // Add this
+import { Helmet } from 'react-helmet-async';
 
 import "./index.css"; // must be before component CSS imports
 import imageFixedWallpaper from "./Images/Untitleddesign.png";
@@ -30,6 +31,8 @@ function App() {
     setMenuOpen(false);
   };
   return (
+    <>
+      <Helmet>
     <div className={`${isToggled ? "dark" : ""} min-h-screen`}>
       {/* navigation */}
 
@@ -257,6 +260,8 @@ function App() {
         <Contact />
       </Element>
     </div>
+    </Helmet>
+    </>
   );
 }
 

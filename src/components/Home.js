@@ -4,12 +4,15 @@ import styles from "./sectionCard.module.css";
 import resumePDF from "../Assets/Rakshit_Ranpariya_Resume.pdf";
 import image1 from "../Images/generated-image.png";
 import { useTheme } from "../contexts/ThemeContext";
+import { Helmet } from 'react-helmet-async';
 
 function Home() {
   const { isToggled } = useTheme();
   console.log("Home isToggled:", isToggled);
 
   return (
+    <>
+      <Helmet>
     <section id="Home" className={`${styles.general}  `}>
       {/* Hero container - Flex for responsive row/col */}
       <div className="flex h-full lg:w-full flex-col  lg:flex-row  justify-center items-center gap-0 0">
@@ -69,6 +72,8 @@ function Home() {
         </div>
       </div>
     </section>
+    </Helmet>
+    </>
   );
 }
 
