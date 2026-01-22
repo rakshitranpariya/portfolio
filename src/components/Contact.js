@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 function Contact() {
   return (
     <section id="Contact" className=" ">
-      // Contact.js
+ 
       <Helmet>
         <title>Contact | Rakshit Ranpariya Developer Halifax</title>
         <meta

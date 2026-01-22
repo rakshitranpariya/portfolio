@@ -28,7 +28,7 @@ function Education() {
 
   return (
     <section className=" py-12">
-      // Education.js
+      
       <Helmet>
         <title>Education | Rakshit Ranpariya React Developer</title>
         <meta
