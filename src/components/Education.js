@@ -3,7 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 import EducationComponent from "./EducationComponent/EducationComponent";
 import CertificationComponent from "./EducationComponent/CertificationComponent";
-
+import { Helmet } from "react-helmet-async";  
 function Education() {
   const [educationData, setEducationData] = useState([]);
   useEffect(() => {
@@ -28,6 +28,14 @@ function Education() {
 
   return (
     <section className=" py-12">
+      // Education.js
+      <Helmet>
+        <title>Education | Rakshit Ranpariya React Developer</title>
+        <meta
+          name="description"
+          content="Conestoga College Computer Science, Confluent Kafka cert 95%, Dalhousie research assistant."
+        />
+      </Helmet>
       <div className="max-w-6xl mx-auto px-4">
         {/* Title like screenshot */}
         <div className="text-center mb-10">
