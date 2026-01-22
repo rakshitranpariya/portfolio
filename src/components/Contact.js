@@ -1,11 +1,9 @@
 import React from "react";
 import { Mail, Phone, Linkedin } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 
 function Contact() {
   return (
-    <>
-      <Helmet>
+    
         <section id="Contact" className=" ">
           <div className="mt-0 lg:mt-20  lg:h-screen px-4 py-24 lg:pb-0">
             {/* Title */}
@@ -24,7 +22,7 @@ function Contact() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
               {/* Email */}
 
-              <div className=" rounded-[40px] bg-white/5 dark:bg-black/30 backdrop-blur-sm border border-white/30 dark:!border-black/30 shadow-xl shadow-black/10  p-6 text-center">
+              <div className=" rounded-[40px] bg-white/5 dark:bg-black/30 backdrop-blur-lg border border-white/30 dark:!border-black/30 shadow-xl shadow-black/10  p-6 text-center">
                 <div className="mx-auto w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center text-blue-700 outline outline-blue-500/30">
                   <Mail size={22} />
                 </div>
@@ -39,7 +37,7 @@ function Contact() {
                 </a>
               </div>
               {/* Phone */}
-              <div className=" rounded-[40px] bg-white/2 dark:bg-black/30 backdrop-blur-sm border border-white/30 dark:!border-black/30 shadow-xl shadow-black/10  p-6 text-center">
+              <div className=" rounded-[40px] bg-white/2 dark:bg-black/30 backdrop-blur-lg border border-white/30 dark:!border-black/30 shadow-xl shadow-black/10  p-6 text-center">
                 <div className="mx-auto w-14 h-14 rounded-full bg-green-50 flex items-center justify-center text-green-700 outline outline-green-500/30">
                   <Phone size={22} />
                 </div>
@@ -54,7 +52,7 @@ function Contact() {
                 </a>
               </div>
               {/* LinkedIn */}
-              <div className=" rounded-[40px]  bg-white/2 dark:bg-black/30 backdrop-blur-sm border border-white/30 dark:!border-black/30 shadow-xl shadow-black/10 p-6 text-center">
+              <div className=" rounded-[40px]  bg-white/2 dark:bg-black/30 backdrop-blur-lg border border-white/30 dark:!border-black/30 shadow-xl shadow-black/10 p-6 text-center">
                 <div className="mx-auto w-14 h-14 rounded-full bg-sky-50 flex items-center justify-center text-sky-700 outline outline-sky-500/30">
                   <Linkedin size={22} />
                 </div>
@@ -73,8 +71,7 @@ function Contact() {
             </div>
           </div>
         </section>
-      </Helmet>
-    </>
+     
   );
 }
 

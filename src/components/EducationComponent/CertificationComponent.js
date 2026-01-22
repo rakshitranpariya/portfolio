@@ -44,7 +44,7 @@ function CertificationComponent({ data }) {
 
   return (
     <div className="col-span-full z-1">
-      <div className="rounded-[40px] bg-white/2 backdrop-blur-sm border border-white/30 dark:!border-black/30 shadow-xl shadow-black/10 dark:bg-black/30 p-6 ">
+      <div className="rounded-[40px] bg-white/2 backdrop-blur-lg border border-white/30 dark:!border-black/30 shadow-xl shadow-black/10 dark:bg-black/30 p-6 ">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div className="flex items-start gap-4 min-w-0">
             <div className="flex items-start gap-4">

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ProjectComponent from "./ProjectComponent/ProjectComponent";
-import { Helmet } from "react-helmet-async";
 
 export default function Project() {
   const [projects, setProjects] = useState([]);
@@ -27,9 +26,8 @@ export default function Project() {
   }, []);
 
   return (
-    <>
-      <Helmet>
-        <section id="Projects" className=" py-12">
+  
+        <section id="Projects" className=" pt-24">
           <div className="  justify-center w-full lg:h-screen px-4">
             {/* Title like screenshot */}
             <div className="text-center mb-6">
@@ -47,7 +45,6 @@ export default function Project() {
             </div>
           </div>
         </section>
-      </Helmet>
-    </>
+     
   );
 }

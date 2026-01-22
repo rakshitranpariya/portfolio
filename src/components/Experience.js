@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
 import ExperienceComponent from "./ExperienceComponent/ExperienceComponent";
-import { Helmet } from 'react-helmet-async';
 
 function Experience() {
   const [experienceData, setExperienceData] = useState([]);
@@ -25,9 +24,8 @@ function Experience() {
   };
 
   return (
-    <>
-    <Helmet>  
-    <div className="antialiased text-gray-800 py-5 ">
+   
+    <div className="antialiased text-gray-800 pt-10 pb-5">
       <div className="text-center mb-1">
         <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white">
           Experience
@@ -44,8 +42,7 @@ function Experience() {
         ))}
       </div>
     </div>
-    </Helmet>
-    </>
+   
   );
 }
 

@@ -63,7 +63,7 @@ const ExperienceComponent = ({ sendData, left = false }) => {
             aria-hidden="true"
           />
 
-          <div className="bg-white/2 backdrop-blur-sm border border-white/30 dark:!border-black/30 dark:bg-black/30 shadow-xl shadow-black/10 p-6 rounded-[40px]  ">
+          <div className="bg-white/2 backdrop-blur-lg border border-white/30 dark:!border-black/30 dark:bg-black/30 shadow-xl shadow-black/10 p-6 rounded-[40px]  ">
             {/* Header: Role + Company */}
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 mt-0 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center overflow-hidden">

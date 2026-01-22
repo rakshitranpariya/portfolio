@@ -39,7 +39,7 @@ function EducationComponent({ data }) {
     ToMonth
   )} ${ToYear}`;
   return (
-    <div className="flex flex-col h-full min-h-0 z-1 rounded-[40px] bg-white/2 dark:bg-black/30  backdrop-blur-sm border border-white/30 dark:!border-black/30 shadow-xl shadow-black/10  p-6 md:max-h-96 ">
+    <div className="flex flex-col h-full min-h-0 z-1 rounded-[40px] bg-white/2 dark:bg-black/30  backdrop-blur-lg border border-white/30 dark:!border-black/30 shadow-xl shadow-black/10  p-6 md:max-h-96 ">
       {/* Header row: icon + titles */}
       <div className="flex items-start gap-4">
         <div className="w-12 h-12 rounded-lg mt-2 bg-blue-50 border border-blue-100 flex items-center justify-center overflow-hidden">

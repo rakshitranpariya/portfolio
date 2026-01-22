@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useTheme } from "./contexts/ThemeContext"; // Add this
-import { Helmet } from 'react-helmet-async';
 
 import "./index.css"; // must be before component CSS imports
 import imageFixedWallpaper from "./Images/Untitleddesign.png";
@@ -31,8 +30,7 @@ function App() {
     setMenuOpen(false);
   };
   return (
-    <>
-      <Helmet>
+    
     <div className={`${isToggled ? "dark" : ""} min-h-screen`}>
       {/* navigation */}
 
@@ -47,7 +45,8 @@ function App() {
         }}
       />
       <div className="nav container d-none d-sm-block ">
-        <title>Rakshit Ranpariya | React Developer</title>
+        
+        <title>Rakshit Ranpariya </title>
         <meta
           name="description"
           content="Welcome to my portfolio. Explore my latest React projects, case studies, and technical skills. Get in touch with me if you're interested in collaborating!"
@@ -56,6 +55,7 @@ function App() {
           rel="canonical"
           href="https://rakshitranpariya.github.io/portfolio/"
         />
+        
         <div className="nav-collection fixed top-7 right-8 flex flex-row items-center gap-4 rounded-full z-40 ">
           <nav>
             <div className=" flex flex-row items-center justify-center  text-gray-800 dark:text-gray-200 font-medium ">
@@ -260,8 +260,7 @@ function App() {
         <Contact />
       </Element>
     </div>
-    </Helmet>
-    </>
+   
   );
 }
 

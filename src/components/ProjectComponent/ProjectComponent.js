@@ -57,7 +57,7 @@ export default function ProjectComponent({ data }) {
       )}
     >
       <div className=" h-full w-full transition-transform duration-500 [transform-style:preserve-3d] card-inner z-2">
-        <div className="card-front bg-white/2  dark:bg-black/30 backdrop-blur-sm border border-white/30 dark:!border-black/30 shadow-xl shadow-black/10 flex flex-col backface-hidden pt-4 px-4 pb-3 rounded-[40px]  h-full w-full [backface-visibility:hidden]">
+        <div className="card-front bg-white/2  dark:bg-black/30 backdrop-blur-lg border border-white/30 dark:!border-black/30 shadow-xl shadow-black/10 flex flex-col backface-hidden pt-4 px-4 pb-3 rounded-[40px]  h-full w-full [backface-visibility:hidden]">
           {/* Absolute Positioned Flip Icon */}
           <img
             src={flip_image}
@@ -113,7 +113,7 @@ export default function ProjectComponent({ data }) {
             </div>
           )}
         </div>
-        <div className="card-back absolute bg-white/2 dark:bg-black/30 backdrop-blur-sm border border-white/30  dark:!border-black/30  shadow-xl shadow-black/10 inset-0 backface-hidden pt-4 px-4 pb-3 rotate-y-180  p-4 rounded-[40px]  h-full w-full overflow-y-auto [transform:rotateY(180deg)] [backface-visibility:hidden]">
+        <div className="card-back absolute bg-white/2 dark:bg-black/30 backdrop-blur-lg border border-white/30  dark:!border-black/30  shadow-xl shadow-black/10 inset-0 backface-hidden pt-4 px-4 pb-3 rotate-y-180  p-4 rounded-[40px]  h-full w-full overflow-y-auto [transform:rotateY(180deg)] [backface-visibility:hidden]">
           {/* Absolute Positioned Flip Icon */}
           <img
             src={flip_image}
