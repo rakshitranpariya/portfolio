@@ -13,6 +13,18 @@ module.exports = {
       "2xl": "1536px",
     },
     extend: {
+      fontFamily: {
+        "work-sans": ["Work Sans", "sans-serif"],
+      },
+      keyframes: {
+        float: {
+          "0%, 100%": { transform: "translateY(0px) translateX(0px)" },
+          "50%": { transform: "translateY(-8px) translateX(4px)" },
+        },
+      },
+      animation: {
+        float: "float 3s ease-in-out infinite",
+      },
       inset: {
         7: "28px",
         8: "32px",

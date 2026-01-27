@@ -11,29 +11,33 @@ function Home() {
   console.log("Home isToggled:", isToggled);
 
   return (
-   
     <section id="Home" className={`${styles.general}  `}>
-      <Helmet>  {/* ← Add this block */}
-        <title>Rakshit Ranpariya | React Developer Halifax Portfolio</title>
-        <meta name="description" content="Rakshit Ranpariya full-stack React Spring Boot Kafka engineer Halifax NS. Psyncopate TCS Dalhousie University portfolio projects certifications." />
+      <Helmet>
+        {" "}
+        {/* ← Add this block */}
+        <title>Rakshit Ranpariya | Java Developer Canada</title>
+        <meta
+          name="description"
+          content="Rakshit Ranpariya full-stack React Spring Boot Kafka engineer Halifax NS. Psyncopate TCS Dalhousie University portfolio projects certifications."
+        />
       </Helmet>
       {/* Hero container - Flex for responsive row/col */}
       <div className="flex h-full lg:w-full flex-col  lg:flex-row  justify-center items-center gap-0 0">
         {/* Left: Text content */}
         <div className="flex w-full lg:justify-center flex-1 flex-col  order-2 lg:order-1 space-y-8 mt-0 pb-10 lg:pb-0 h-[40vh] lg:h-[70vh] justify-center items-start mb-20 lg:mb-0 lg:pl-20 pl-0">
           {/* Greeting + Name */}
-          <div className="flex flex-col items-start text-5xl text-left space-y-4  lg:text-left pl-[90px] lg:pl-0">
-            <div className="  dark:text-white/50 text-gray-700  text-stroke-7 text-stroke-white font-large  ">
+          <div className="flex flex-col items-start  text-left space-y-4  lg:text-left pl-[80px] lg:pl-0">
+            <div className="  dark:text-white/50 text-3xl lg:text-4xl text-gray-700  text-stroke-7 text-stroke-white font-extralight  ">
               Hello, I'm
             </div>
-            <div className="flex leading-none flex-col font-extrabold mt-0">
-              <div className=" text-black dark:!text-white">Rakshit</div>
-              <div className=" text-black dark:!text-white">Ranpariya.</div>
+            <div className="flex leading-none flex-col font-extrabold mt-0 text-5xl lg:text-6xl ">
+              <div className=" text-black dark:!text-white ">Rakshit</div>
+              <div className=" text-black dark:!text-white ">Ranpariya.</div>
             </div>
           </div>
 
           {/* Subtitle */}
-          <div className="text-md lg:text-md flex text-left lg:text-left text-gray-700 dark:text-white/50 text-white-900/90 mt-3  pl-[90px] lg:pl-0">
+          <div className="text-md lg:text-md flex text-left lg:text-left text-gray-700 dark:text-white/50 text-white-900/90 mt-3  pl-[80px] lg:pl-0">
             Transforming complex problems <br className="hidden xs:inline " />
             into elegant, scalable solutions.
           </div>
@@ -64,18 +68,24 @@ function Home() {
           </div>
         </div>
 
-        {/* Right: Profile Image */}
-        <div className=" flex flex-1  justify-end order-1 lg:order-2 lg:text-right h-[50vh]  aspect-auto lg:items-end  mt-20 lg:mt-0 p-6 lg:p-0 lg:pr-20 pr-0 ">
+        {/* Right: Profile Image with Badge */}
+        <div className="relative flex flex-1 justify-end order-1 lg:order-2 lg:text-right h-[50vh] aspect-auto lg:items-end mt-20 lg:mt-0 p-6 lg:p-0 lg:pr-[40px] pr-0">
           <img
-            className=" image rounded-[40px] h-full lg:h-full object-cover rounded-5xl  dark:brightness-110 dark:saturate-110 transition-all duration-700   origin-center "
+            className="image rounded-[40px] h-full lg:h-full object-cover rounded-5xl dark:brightness-110 dark:saturate-110 transition-all duration-700 origin-center"
             src={image1}
             alt="Rakshit Ranpariya - React Developer Profile"
             loading="eager"
           />
+          {/* Floating Badge - Now positions correctly on image */}
+          <div className="absolute flex flex-row top-15 -right-3 lg:top-6 lg:right-6 bg-black/5  backdrop-blur-md text-gray-900  px-2 py-2 border-0 rounded-2xl text-sm font-bold shadow-1xl  animate-float font-work-sans  z-20">
+            <div className="blink_me mt-[6px] mr-1"></div>{" "}
+            <div className="text-left">
+              Open for <br /> new projects
+            </div>
+          </div>
         </div>
       </div>
     </section>
-    
   );
 }
 
