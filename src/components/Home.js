@@ -2,7 +2,8 @@ import { Download } from "lucide-react";
 import "./Home.css"; // Keep if needed for non-Tailwind, else remove
 import styles from "./sectionCard.module.css";
 import resumePDF from "../Assets/Rakshit_Ranpariya_Resume.pdf";
-import image1 from "../Images/generated-image.png";
+import image1 from "../Images/lightprofilepicture.png";
+import image2 from "../Images/darkprofilepicture.png";
 import { useTheme } from "../contexts/ThemeContext";
 import { Helmet } from "react-helmet-async";
 
@@ -26,8 +27,8 @@ function Home() {
         {/* Left: Text content */}
         <div className="flex w-full lg:justify-center flex-1 flex-col  order-2 lg:order-1 space-y-8 mt-0 pb-10 lg:pb-0 h-[40vh] lg:h-[70vh] justify-center items-start mb-20 lg:mb-0 lg:pl-20 pl-0">
           {/* Greeting + Name */}
-          <div className="flex flex-col items-start  text-left space-y-4  lg:text-left pl-[80px] lg:pl-0">
-            <div className="  dark:text-white/50 text-3xl lg:text-4xl text-gray-700  text-stroke-7 text-stroke-white font-extralight  ">
+          <div className="flex flex-col items-start  text-left space-y-4  lg:text-left pl-[60px] lg:pl-0">
+            <div className="  dark:text-white/50 text-3xl lg:text-4xl text-black-700 dark:text-white/50  text-stroke-7 text-stroke-white font-extralight  ">
               Hello, I'm
             </div>
             <div className="flex leading-none flex-col font-extrabold mt-0 text-5xl lg:text-6xl ">
@@ -37,13 +38,13 @@ function Home() {
           </div>
 
           {/* Subtitle */}
-          <div className="text-md lg:text-md flex text-left lg:text-left text-gray-700 dark:text-white/50 text-white-900/90 mt-3  pl-[80px] lg:pl-0">
+          <div className="text-md lg:text-md flex text-left lg:text-left text-black-700 dark:text-white/50 text-white-900/90 mt-3  pl-[60px] lg:pl-0 pr-[30px] lg:pr-0">
             Transforming complex problems <br className="hidden xs:inline " />
             into elegant, scalable solutions.
           </div>
 
           {/* Download Button */}
-          <div className=" pl-[80px] lg:pl-0">
+          <div className=" pl-[60px] lg:pl-0">
             <a
               href={resumePDF}
               download="Rakshit_Ranpariya_Resume.pdf"
@@ -69,18 +70,18 @@ function Home() {
         </div>
 
         {/* Right: Profile Image with Badge */}
-        <div className="relative flex flex-1 justify-end order-1 lg:order-2 lg:text-right h-[50vh] aspect-auto lg:items-end mt-20 lg:mt-0 p-6 lg:p-0 lg:pr-[40px] pr-0">
+        <div className="relative flex flex-1 justify-end order-1 lg:order-2 lg:text-right h-[50vh] aspect-auto lg:items-end mt-20 lg:mt-0 p-6 lg:p-0 lg:pr-[40px] ">
           <img
             className="image rounded-[40px] h-full lg:h-full object-cover rounded-5xl dark:brightness-110 dark:saturate-110 transition-all duration-700 origin-center"
-            src={image1}
+            src={isToggled ? image2 : image1}
             alt="Rakshit Ranpariya - React Developer Profile"
             loading="eager"
           />
           {/* Floating Badge - Now positions correctly on image */}
           <div className="absolute flex flex-row top-15 -right-3 lg:top-6 lg:right-6 bg-black/5  backdrop-blur-md text-gray-900  px-2 py-2 border-0 rounded-2xl text-sm font-bold shadow-1xl  animate-float font-work-sans  z-20">
-            <div className="blink_me mt-[6px] mr-1"></div>{" "}
-            <div className="text-left">
-              Open for <br /> new projects
+            <div className="blink_me mt-[5px] mr-1"></div>{" "}
+            <div className="text-left text-black-600 dark:text-white/90 ">
+              Open to exciting <br /> Collaborations
             </div>
           </div>
         </div>

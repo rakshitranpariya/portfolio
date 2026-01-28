@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useTheme } from "./contexts/ThemeContext"; // Add this
 
 import "./index.css"; // must be before component CSS imports
-import imageFixedWallpaper from "./Images/Untitleddesign.png";
-import imageFixedWallpaperDark from "./Images/UntitleddesignDark.png";
+import imageFixedWallpaper from "./Images/lightmodewallpaper.png";
+import imageFixedWallpaperDark from "./Images/darkmodewallpaper.png";
 import "./App.css";
 import { Sun, Moon } from "lucide-react";
 
@@ -30,7 +30,6 @@ function App() {
     setMenuOpen(false);
   };
   return (
-    
     <div className={`${isToggled ? "dark" : ""} min-h-screen`}>
       {/* navigation */}
 
@@ -45,7 +44,6 @@ function App() {
         }}
       />
       <div className="nav container d-none d-sm-block ">
-        
         <title>Rakshit Ranpariya </title>
         <meta
           name="description"
@@ -55,10 +53,10 @@ function App() {
           rel="canonical"
           href="https://rakshitranpariya.github.io/portfolio/"
         />
-        
+
         <div className="nav-collection fixed top-7 right-8 flex flex-row items-center gap-4 rounded-full z-40 ">
           <nav>
-            <div className=" flex flex-row items-center justify-center  text-gray-800 dark:text-gray-200 font-medium ">
+            <div className=" flex flex-row items-center justify-center  text-gray-800 dark:text-gray-200 font-medium  bg-white/40 dark:bg-white/10 backdrop-blur-xs rounded-full ">
               <Link
                 to="Home"
                 smooth
@@ -220,22 +218,18 @@ function App() {
                   checked={isToggled}
                   onChange={(e) => setIsToggled(e.target.checked)}
                 />
-                <div className="w-11 h-6 bg-white/30 dark:bg-black/40 rounded-full ring-1 ring-white/30 dark:ring-black/30 shadow-lg hover:shadow-xl transition-all duration-300 peer-focus:ring-2 peer-focus:ring-gray-400 relative overflow-hidden">
+                <div className="w-11 h-6 bg-white/80 dark:bg-black/90 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden">
                   {/* Thumb: Always white */}
                   <div
                     className={`absolute top-[2px] left-[2px] w-5 h-5 bg-white rounded-full shadow-md transition-all duration-300 ease-in-out transform shadow-gray-300 ${
                       isToggled
-                        ? "translate-x-5 scale-100 shadow-white/50"
+                        ? "translate-x-5 scale-100 "
                         : "translate-x-0 scale-100"
                     }`}
                   />
                   {/* Track fill: White in dark, black in light */}
                   <div
-                    className={`absolute inset-0 rounded-full transition-all duration-300 ${
-                      isToggled
-                        ? "bg-white/60 dark:bg-black/60 shadow-white/20 dark:shadow-black/20"
-                        : "bg-transparent"
-                    }`}
+                    className={`absolute inset-0 rounded-full transition-all duration-300 bg-white/40 dark:bg-white/10`}
                   />
                 </div>
               </label>
@@ -260,7 +254,6 @@ function App() {
         <Contact />
       </Element>
     </div>
-   
   );
 }
 

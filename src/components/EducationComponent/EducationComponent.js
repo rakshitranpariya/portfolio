@@ -21,7 +21,7 @@ function EducationComponent({ data }) {
     console.log("No data received yet.");
     return <p>Loading...</p>;
   }
-// this is EducationComponent.js
+  // this is EducationComponent.js
   const {
     Degree,
     Major,
@@ -36,13 +36,13 @@ function EducationComponent({ data }) {
   } = data;
 
   const formattedDate = `${monthLabel(FromMonth)} ${FromYear} - ${monthLabel(
-    ToMonth
+    ToMonth,
   )} ${ToYear}`;
   return (
-    <div className="flex flex-col h-full min-h-0 z-1 rounded-[40px] bg-white/2 dark:bg-black/30  backdrop-blur-lg border border-white/30 dark:!border-black/30 shadow-xl shadow-black/10  p-6 md:max-h-96 ">
+    <div className="flex flex-col h-full min-h-0 z-1 rounded-[40px] bg-white/2 dark:bg-black/30  backdrop-blur-lg border border-black/80 dark:!border-black/30 shadow-xl shadow-black/10  p-6 md:max-h-96 ">
       {/* Header row: icon + titles */}
       <div className="flex items-start gap-4">
-        <div className="w-12 h-12 rounded-lg mt-2 bg-blue-50 border border-blue-100 flex items-center justify-center overflow-hidden">
+        <div className="w-12 h-12 rounded-lg mt-2 bg-blue-50  flex items-center justify-center overflow-hidden">
           {ImageLink ? (
             <img
               src={ImageLink}
