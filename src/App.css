@@ -130,3 +130,12 @@ Element {
   padding: 0px 15px;
   margin: 0px;
 }
+
+.toggle-button{
+    box-shadow: 10px 10px 60px;
+
+}
+.hamburger-option{
+  margin-top: 0px;
+  margin-bottom: 4px;
+}

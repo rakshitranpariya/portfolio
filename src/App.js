@@ -43,7 +43,7 @@ function App() {
           willChange: "transform",
         }}
       />
-      <div className="nav container d-none d-sm-block ">
+      <div className="nav container d-none d-md-block ">
         <title>Rakshit Ranpariya </title>
         <meta
           name="description"
@@ -55,8 +55,8 @@ function App() {
         />
 
         <div className="nav-collection fixed top-7 right-8 flex flex-row items-center gap-4 rounded-full z-40 ">
-          <nav>
-            <div className=" flex flex-row items-center justify-center  text-gray-800 dark:text-gray-200 font-medium  bg-white/40 dark:bg-white/10 backdrop-blur-xs rounded-full ">
+          <nav className="h-10">
+            <div className=" flex flex-row items-center justify-center  text-gray-800 dark:text-gray-200 font-medium  bg-white/30 dark:bg-white/10 backdrop-blur-xs rounded-full p-1 ">
               <Link
                 to="Home"
                 smooth
@@ -111,7 +111,7 @@ function App() {
               </Link>
             </div>
           </nav>
-          <label className="toggle-button relative inline-flex items-center cursor-pointer">
+          <label className="toggle-button relative inline-flex items-center cursor-pointer rounded-3xl">
             {/* Hidden checkbox */}
             <input
               type="checkbox"
@@ -120,11 +120,11 @@ function App() {
               onChange={(e) => setIsToggled(e.target.checked)}
             />
 
-            <div className="w-11 h-11 bg-white/20 dark:bg-black/20 backdrop-blur-md  shadow-xl rounded-full flex items-center justify-center cursor-pointer hover:scale-125 hover:shadow-2xl transition-all duration-300 peer-checked:bg-white/30 dark:peer-checked:bg-black/30 z-40">
+            <div className="toggle-button w-11 h-11 bg-white/5 bg-white-20 dark:bg-black/20 backdrop-blur-lg z-50 rounded-full flex items-center justify-center cursor-pointer hover:scale-125  transition-all duration-300 peer-checked:bg-white/30 dark:peer-checked:bg-black/30 ">
               {isToggled ? (
-                <Sun size={24} className="text-blue-400" />
+                <Sun size={24} className="text-yellow-400" />
               ) : (
-                <Moon size={24} className="text-yellow-500" />
+                <Moon size={24} className="text-blue-500" />
               )}
             </div>
           </label>
@@ -133,7 +133,7 @@ function App() {
       {/* <div className='hamburger '>{activeSection}</div>       */}
 
       {/* Hamburger Menu for smaller screens */}
-      <div className="hamburger-container d-sm-none dark:bg-black/30 bg-white/30  ">
+      <div className="hamburger-container d-md-none dark:bg-black/30 bg-white/30  ">
         <div className="hamburger" onClick={toggleMenu}>
           ☰ {/* You can replace this with an icon */}
           <span>{activeSection}</span>
@@ -147,7 +147,7 @@ function App() {
               onSetActive={() => handleSetActive("Home")}
               spy={true}
               onClick={closeMenu}
-              className={`
+              className={`hamburger-option
                 ${activeSection === "Home" ? "active-link" : "unactive-link"}
                 `}
             >
@@ -160,9 +160,9 @@ function App() {
               onSetActive={() => handleSetActive("Education")}
               spy={true}
               onClick={closeMenu}
-              className={
-                activeSection === "Education" ? "active-link" : "unactive-link"
-              }
+              className={`    hamburger-option     
+                ${activeSection === "Education" ? "active-link" : "unactive-link"}
+              `}
             >
               Education
             </Link>
@@ -173,9 +173,9 @@ function App() {
               onSetActive={() => handleSetActive("Experience")}
               spy={true}
               onClick={closeMenu}
-              className={
-                activeSection === "Experience" ? "active-link" : "unactive-link"
-              }
+              className={` hamburger-option         
+                ${activeSection === "Experience" ? "active-link" : "unactive-link"}
+              `}
             >
               Experience
             </Link>
@@ -186,9 +186,9 @@ function App() {
               onSetActive={() => handleSetActive("Projects")}
               spy={true}
               onClick={closeMenu}
-              className={
-                activeSection === "Projects" ? "active-link" : "unactive-link"
-              }
+              className={` hamburger-option         
+                ${activeSection === "Projects" ? "active-link" : "unactive-link"}
+              `}
             >
               Projects
             </Link>
@@ -199,41 +199,32 @@ function App() {
               onSetActive={() => handleSetActive("Contact")}
               spy={true}
               onClick={closeMenu}
-              className={
-                activeSection === "Contact" ? "active-link" : "unactive-link"
-              }
+              className={` hamburger-option        
+                ${activeSection === "Contact" ? "active-link" : "unactive-link"}
+              `}
             >
               Contact
             </Link>
             {/* Theme row: Label + Toggle - replace the previous toggle div */}
             {/* Clean toggle switch at bottom - NO icons */}
-            <div className=" flex items-center gap-2  z-50 ">
+            <label className="flex items-center gap-2 justify-center z-50 cursor-pointer">
               <span className="text-md font-small text-gray-500  whitespace-nowrap">
                 {isToggled ? "Light Mode" : "Dark Mode"}
               </span>
-              <label className="relative inline-flex items-center cursor-pointer select-none">
-                <input
-                  type="checkbox"
-                  className="sr-only peer"
-                  checked={isToggled}
-                  onChange={(e) => setIsToggled(e.target.checked)}
-                />
-                <div className="w-11 h-6 bg-white/80 dark:bg-black/90 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden">
-                  {/* Thumb: Always white */}
-                  <div
-                    className={`absolute top-[2px] left-[2px] w-5 h-5 bg-white rounded-full shadow-md transition-all duration-300 ease-in-out transform shadow-gray-300 ${
-                      isToggled
-                        ? "translate-x-5 scale-100 "
-                        : "translate-x-0 scale-100"
-                    }`}
-                  />
-                  {/* Track fill: White in dark, black in light */}
-                  <div
-                    className={`absolute inset-0 rounded-full transition-all duration-300 bg-white/40 dark:bg-white/10`}
-                  />
-                </div>
-              </label>
-            </div>
+              <input
+                type="checkbox"
+                className="sr-only peer"
+                checked={isToggled}
+                onChange={(e) => setIsToggled(e.target.checked)}
+              />
+              <div className="w-5 h-5 bg-white/5 dark:bg-black/20 backdrop-blur-lg z-50 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 peer-checked:bg-white/30 dark:peer-checked:bg-black/30">
+                {isToggled ? (
+                  <Sun size={22} className="text-yellow-400" />
+                ) : (
+                  <Moon size={22} className="text-blue-500" />
+                )}
+              </div>
+            </label>
           </div>
         )}
       </div>
