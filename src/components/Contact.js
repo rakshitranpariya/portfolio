@@ -3,7 +3,7 @@ import { Mail, Phone, Linkedin } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 function Contact() {
   return (
-    <section id="Contact" className=" ">
+    <section id="Contact" className=" h-full pt-24 mt-24">
  
       <Helmet>
         <title>Contact | Rakshit Ranpariya Developer Halifax</title>
