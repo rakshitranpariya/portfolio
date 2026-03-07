@@ -25,22 +25,22 @@ body {
 
 @layer components {
   .timeline-img {
-    @apply w-5 h-5 object-cover bg-blue-700 rounded-full ml-[22px] xs:ml-0 shadow-md border-4 left-16 xs:left-1 xs:top-19 md:top-10 border-white xs:absolute md:mx-auto md:left-0 md:right-0;
+    @apply w-5 h-5 object-cover bg-blue-700 rounded-full ml-8 xs:ml-0 shadow-md border-4 left-16 xs:left-1 xs:top-19 md:top-10 border-white xs:absolute md:mx-auto md:left-0 md:right-0;
   }
   /* w-5 h-5 rounded-full bg-blue-700 border-3 border-white shadow-md */
   .timeline-container {
-    @apply relative pt-2 xs:pl-28 xs:pt-0 md:w-1/2  md:pl-16;
+    @apply relative pt-2 xs:pl-16 xs:pt-0 md:w-1/2  md:pl-12;
   }
   .timeline-container-left {
-    @apply md:ml-0  md:pl-0 md:w-1/2 md:pr-16;
+    @apply md:ml-0  md:pl-0 md:w-1/2 md:pr-12;
   }
   .timeline-pointer {
-    @apply absolute  inset-5 left-[22px] h-5 w-5 transform  -top-5 rotate-[135deg] xs:left-15 xs:rotate-[45deg] xs:top-10 md:rotate-45 md:left-10 md:top-10 bg-transparent backdrop-blur-lg border-2 border-black/20 dark:border-black/90  shadow-lg shadow-black/60;
+    @apply absolute z-20 inset-5 left-[32px] h-5 w-5 transform  -top-[0.75px] rotate-[135deg] xs:left-13 xs:rotate-[45deg] xs:top-10 md:rotate-45 md:left-[39px] md:top-10  border border-black/10 dark:border-black/90  shadow-lg bg-white/20 shadow-black/60 backdrop-blur-md;
     clip-path: polygon(0 0, 100% 100%, 0 100%);
   }
 
   .timeline-pointer-left {
-    @apply md:left-auto left-[22px] rotate-[225deg] xs:rotate-[135deg] xs:left-15  md:right-10 md:rotate-[-45deg];
+    @apply md:left-auto left-[32px] rotate-[225deg] xs:rotate-[135deg] xs:left-13  md:right-[39px] md:rotate-[-45deg];
     clip-path: polygon(0 100%, 100% 100%, 100% 0); /* Right-pointing arrow */
   }
 }
