@@ -56,7 +56,7 @@ function App() {
 
         <div className="nav-collection fixed top-7 right-8 flex flex-row items-center gap-4 rounded-full z-40 ">
           <nav className="h-10">
-            <div className=" flex flex-row items-center justify-center  text-gray-800 dark:text-gray-200 font-medium  bg-white/30 dark:bg-black/60  backdrop-blur-xs rounded-full p-1 ">
+            <div className=" flex flex-row items-center justify-center  text-gray-800 dark:text-gray-200 font-medium  bg-white/60  dark:bg-black/60  backdrop-blur-xs rounded-full p-1 ">
               <Link
                 to="Home"
                 smooth
@@ -121,7 +121,7 @@ function App() {
               onChange={(e) => setIsToggled(e.target.checked)}
             />
 
-            <div className="toggle-button  dark:bg-black/50 w-11 h-11 backdrop-blur-lg z-50 rounded-full flex items-center justify-center cursor-pointer hover:scale-125  transition-all duration-300  ">
+            <div className="toggle-button bg-white/70 dark:bg-black/70 w-11 h-11 backdrop-blur-lg z-50 rounded-full flex items-center justify-center cursor-pointer hover:scale-125  transition-all duration-300  ">
               {isToggled ? (
                 <Sun size={24} className="text-yellow-400" />
               ) : (
@@ -129,7 +129,6 @@ function App() {
               )}
             </div>
           </label>
-
         </div>
       </div>
       {/* <div className='hamburger '> {activeSection} </div> */}
