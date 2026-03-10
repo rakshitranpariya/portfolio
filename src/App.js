@@ -121,7 +121,7 @@ function App() {
               onChange={(e) => setIsToggled(e.target.checked)}
             />
 
-            <div className="toggle-button bg-dark-20 dark:bg-white/20 w-11 h-11 backdrop-blur-lg z-50 rounded-full flex items-center justify-center cursor-pointer hover:scale-125  transition-all duration-300  ">
+            <div className="toggle-button  dark:bg-black/50 w-11 h-11 backdrop-blur-lg z-50 rounded-full flex items-center justify-center cursor-pointer hover:scale-125  transition-all duration-300  ">
               {isToggled ? (
                 <Sun size={24} className="text-yellow-400" />
               ) : (
