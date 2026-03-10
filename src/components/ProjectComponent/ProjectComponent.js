@@ -1,4 +1,3 @@
-import React from "react";
 import clsx from "clsx";
 import { useState } from "react";
 import flip_image from "../../Images/flip_icon.png";

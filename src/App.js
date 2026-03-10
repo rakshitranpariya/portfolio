@@ -56,7 +56,7 @@ function App() {
 
         <div className="nav-collection fixed top-7 right-8 flex flex-row items-center gap-4 rounded-full z-40 ">
           <nav className="h-10">
-            <div className=" flex flex-row items-center justify-center  text-gray-800 dark:text-gray-200 font-medium  bg-white/30 dark:bg-white/10 backdrop-blur-xs rounded-full p-1 ">
+            <div className=" flex flex-row items-center justify-center  text-gray-800 dark:text-gray-200 font-medium  bg-white/30 dark:bg-black/60  backdrop-blur-xs rounded-full p-1 ">
               <Link
                 to="Home"
                 smooth
@@ -111,6 +111,7 @@ function App() {
               </Link>
             </div>
           </nav>
+
           <label className="toggle-button relative inline-flex items-center cursor-pointer rounded-3xl">
             {/* Hidden checkbox */}
             <input
@@ -120,7 +121,7 @@ function App() {
               onChange={(e) => setIsToggled(e.target.checked)}
             />
 
-            <div className="toggle-button w-11 h-11 bg-white/5 bg-white-20 dark:bg-black/20 backdrop-blur-lg z-50 rounded-full flex items-center justify-center cursor-pointer hover:scale-125  transition-all duration-300 peer-checked:bg-white/30 dark:peer-checked:bg-black/30 ">
+            <div className="toggle-button bg-dark-20 dark:bg-white/20 w-11 h-11 backdrop-blur-lg z-50 rounded-full flex items-center justify-center cursor-pointer hover:scale-125  transition-all duration-300  ">
               {isToggled ? (
                 <Sun size={24} className="text-yellow-400" />
               ) : (
@@ -128,9 +129,10 @@ function App() {
               )}
             </div>
           </label>
+
         </div>
       </div>
-      {/* <div className='hamburger '>{activeSection}</div>       */}
+      {/* <div className='hamburger '> {activeSection} </div> */}
 
       {/* Hamburger Menu for smaller screens */}
       <div className="hamburger-container d-md-none dark:bg-black/30 bg-white/30  ">
@@ -217,7 +219,7 @@ function App() {
                 checked={isToggled}
                 onChange={(e) => setIsToggled(e.target.checked)}
               />
-              <div className="w-5 h-5 bg-white/5 dark:bg-black/20 backdrop-blur-lg z-50 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 peer-checked:bg-white/30 dark:peer-checked:bg-black/30">
+              <div className="w-5 h-5 bg-white/5 dark:bg-black/20 backdrop-blur-lg z-50 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300  ">
                 {isToggled ? (
                   <Sun size={22} className="text-yellow-400" />
                 ) : (

@@ -61,17 +61,16 @@
 
 nav {
   /* margin: 30px; */
-  position:relative;
+  position: relative;
   z-index: 1000;
   display: flex;
-  color:#000000;
+  color: #000000;
   justify-content: flex-end;
   border-radius: 25px;
   box-shadow: 10px 10px 60px;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(10px);
 }
-
 
 nav a {
   color: rgb(39, 39, 39);
@@ -80,17 +79,16 @@ nav a {
   font-size: 18px;
   font-weight: bold;
   display: inline-block;
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
 }
 
 nav a:hover {
   transform: scale(1.1);
-  color: rgb(56, 55, 55);
+  
 }
-.toggle-button input {
 
-  box-shadow: -5px 8px 50px 0px;
-}
 body {
   /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; */
 }
@@ -99,6 +97,10 @@ Element {
   border: 2px solid red;
 }
 
+.dark .active-link{
+  background-color: #ffffffac;
+  color: #000000;
+}
 .active-link {
   color: #ffffff;
   border-radius: 25px;
@@ -116,7 +118,6 @@ Element {
   color: rgb(130, 129, 129);
 }
 
-
 .custom-menu a.active-link {
   color: #ffffff;
   border-radius: 25px;
@@ -131,11 +132,10 @@ Element {
   margin: 0px;
 }
 
-.toggle-button{
-    box-shadow: 10px 10px 60px;
-
+.toggle-button {
+  box-shadow: 10px 10px 60px;
 }
-.hamburger-option{
+.hamburger-option {
   margin-top: 0px;
   margin-bottom: 4px;
 }

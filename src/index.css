@@ -35,7 +35,7 @@ body {
     @apply md:ml-0  md:pl-0 md:w-1/2 md:pr-12;
   }
   .timeline-pointer {
-    @apply absolute z-20 inset-5 left-[32px] h-5 w-5 transform  -top-[0.75px] rotate-[135deg] xs:left-13 xs:rotate-[45deg] xs:top-10 md:rotate-45 md:left-[39px] md:top-10  border border-black/10 dark:border-black/90  shadow-lg bg-white/20 shadow-black/60 backdrop-blur-md;
+    @apply absolute z-20 inset-5 left-[32px] h-5 w-5 transform  -top-[0.75px] rotate-[135deg] xs:left-13 xs:rotate-[45deg] xs:top-10 md:rotate-45 md:left-[39px] md:top-10  border border-black/10 dark:border-black/90  shadow-lg bg-white/20 dark:bg-black/20 shadow-black/60 backdrop-blur-md;
     clip-path: polygon(0 0, 100% 100%, 0 100%);
   }
 
